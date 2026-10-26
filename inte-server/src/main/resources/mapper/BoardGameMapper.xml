@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.BoardGameMapper">
+
+    <!--
+      카테고리는 <collection> 으로 접고, 보유/대여가능 수량은 LATERAL 로 뽑는다.
+      수량을 일반 JOIN + 집계로 구하면 카테고리 조인과 아이템 조인이 서로 행을 부풀려
+      GROUP BY 가 지저분해지는데, LATERAL 은 집계가 끝난 1행과 조인하므로 두 관심사가 섞이지 않는다.
+    -->
+    <resultMap id="boardGameListMap" type="BoardGameListResponse" autoMapping="true">
+        <id property="boardGameId" column="board_game_id"/>
+        <collection property="categories" ofType="CategoryResponse">
+            <id     property="categoryId" column="category_id"/>
+            <result property="name"       column="category_name"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="boardGameDetailMap" type="BoardGameDetailResponse" autoMapping="true">
+        <id property="boardGameId" column="board_game_id"/>
+        <collection property="categories" ofType="CategoryResponse">
+            <id     property="categoryId" column="category_id"/>
+            <result property="name"       column="category_name"/>
+        </collection>
+    </resultMap>
+
+    <!--
+      상관 서브쿼리를 select 절에 두면 카테고리 LEFT JOIN 으로 불어난 행마다 다시 실행된다
+      (카테고리 3개짜리 게임이면 COUNT 가 3번). PostgreSQL 은 타겟 리스트의 SubPlan 을
+      행 간에 재사용하지 않으므로, LATERAL 로 옮겨 게임당 한 번만 평가되게 한다.
+      COUNT(*) FILTER 로 보유/대여가능 두 번의 스캔도 한 번으로 접는다.
+      집계 함수는 GROUP BY 없이 항상 1행(사본이 없으면 0)을 내므로 ON TRUE 로 붙여도 행 수가 변하지 않는다.
+      실제 실행 계획상 LATERAL 은 Memoize(Cache Key: bg.board_game_id) 로 감싸여 같은 게임의
+      중복 카테고리 행에서 집계 결과를 재사용한다. idx_item_game_status 가 이 조건을 커버한다.
+    -->
+    <sql id="stockJoin">
+        LEFT JOIN LATERAL (
+            SELECT COUNT(*)                                       AS total_count,
+                   COUNT(*) FILTER (WHERE i.status = 'available') AS available_count
+              FROM board_game_item i
+             WHERE i.board_game_id = bg.board_game_id
+        ) s ON TRUE
+    </sql>
+
+    <select id="search" resultMap="boardGameListMap">
+        SELECT bg.board_game_id, bg.name, bg.min_players, bg.max_players,
+               bg.difficulty, bg.play_time, bg.image_url, bg.description,
+               c.category_id, c.name AS category_name,
+               s.total_count, s.available_count
+          FROM board_game bg
+          LEFT JOIN board_game_category bgc ON bgc.board_game_id = bg.board_game_id
+          LEFT JOIN category c              ON c.category_id     = bgc.category_id
+          <include refid="stockJoin"/>
+        <where>
+            <if test="keyword != null and keyword != ''">
+                AND bg.name LIKE '%' || #{keyword} || '%'
+            </if>
+            <!--
+              카테고리 필터는 EXISTS 로 건다. 표시용 LEFT JOIN 쪽에 조건을 걸면
+              '전략'으로 검색했을 때 그 게임의 다른 카테고리가 응답에서 사라진다.
+            -->
+            <if test="categoryId != null">
+                AND EXISTS (SELECT 1 FROM board_game_category f
+                             WHERE f.board_game_id = bg.board_game_id
+                               AND f.category_id   = #{categoryId})
+            </if>
+            <if test="players != null">
+                AND #{players} BETWEEN bg.min_players AND bg.max_players
+            </if>
+        </where>
+        ORDER BY bg.name, bg.board_game_id, c.category_id
+    </select>
+
+    <select id="findDetailById" resultMap="boardGameDetailMap">
+        SELECT bg.board_game_id, bg.name, bg.min_players, bg.max_players,
+               bg.difficulty, bg.play_time, bg.image_url,
+               bg.description, bg.how_to_play,
+               c.category_id, c.name AS category_name,
+               s.total_count, s.available_count,
+               w.waiting_count
+          FROM board_game bg
+          LEFT JOIN board_game_category bgc ON bgc.board_game_id = bg.board_game_id
+          LEFT JOIN category c              ON c.category_id     = bgc.category_id
+          <include refid="stockJoin"/>
+          <!-- waiting_count 도 카테고리 행마다 반복되던 상관 서브쿼리라 같이 LATERAL 로 옮긴다 -->
+          LEFT JOIN LATERAL (
+              SELECT COUNT(*) AS waiting_count
+                FROM reservation r
+               WHERE r.board_game_id = bg.board_game_id
+                 AND r.status = 'waiting'
+          ) w ON TRUE
+         WHERE bg.board_game_id = #{boardGameId}
+         ORDER BY c.category_id
+    </select>
+
+    <select id="findNameById" resultType="string">
+        SELECT name FROM board_game WHERE board_game_id = #{boardGameId}
+    </select>
+
+    <insert id="insertCategories">
+        INSERT INTO board_game_category (board_game_id, category_id)
+        VALUES
+        <foreach collection="categoryIds" item="categoryId" separator=",">
+            (#{boardGameId}, #{categoryId})
+        </foreach>
+    </insert>
+
+    <select id="countExistingCategories" resultType="int">
+        SELECT COUNT(*)
+          FROM category
+         WHERE category_id IN
+        <foreach collection="categoryIds" item="categoryId" open="(" separator="," close=")">
+            #{categoryId}
+        </foreach>
+    </select>
+
+</mapper>

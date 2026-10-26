@@ -1,0 +1,15 @@
+# Reviewable dependency lock input for the first scaffold. The deployment
+# build must resolve these requirements with a hash-producing lock tool and
+# commit the generated platform-specific hashes before release.
+numpy==2.3.2
+scipy==1.16.1
+soundfile==0.13.1
+PyYAML==6.0.2
+onnx==1.18.0
+onnxruntime==1.22.1
+paho-mqtt==2.1.0
+sounddevice==0.5.2
+openwakeword @ git+https://github.com/dscripka/openWakeWord@368c03716d1e92591906a84949bc477f3a834455
+setuptools==75.8.0
+wheel==0.45.1
+pytest==8.3.5

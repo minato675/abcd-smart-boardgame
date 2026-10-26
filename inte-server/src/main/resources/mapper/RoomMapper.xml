@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.RoomMapper">
+
+    <select id="findByRoomNumber" resultType="RoomResponse">
+        SELECT * FROM room WHERE room_number = #{roomNumber}
+    </select>
+
+    <update id="updateRoomStatus">
+        update room
+        SET status = #{status}
+        WHERE room_number = #{roomNumber}
+    </update>
+
+    <select id="findRoomByRfid" resultType="String">
+        SELECT room_number
+        FROM room_rfid
+        WHERE rfid = #{rfid}
+    </select>
+</mapper>

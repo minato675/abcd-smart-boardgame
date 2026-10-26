@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.McViolationLogMapper">
+
+    <!--
+      session_id 는 UUID 컬럼인데 자바에서는 String 이라 ::uuid 캐스팅이 필요하다
+      (QnaLogMapper, McTurnLogMapper 와 같은 이유).
+
+      violation_log_id 는 GENERATED ALWAYS AS IDENTITY, created_at 은 DEFAULT now() 라
+      RETURNING 으로 회수한다.
+    -->
+    <insert id="insert" parameterType="McViolationLog"
+            useGeneratedKeys="true"
+            keyProperty="violationLogId,createdAt"
+            keyColumn="violation_log_id,created_at">
+        INSERT INTO mc_violation_log (session_id, room_number, board_game_id, code, message, table_state)
+        VALUES (
+            #{sessionId}::uuid,
+            #{roomNumber},
+            #{boardGameId},
+            #{code},
+            #{message},
+            #{table}::jsonb
+        )
+    </insert>
+
+    <select id="findBySession" resultType="McViolationLog">
+        SELECT violation_log_id,
+               session_id,
+               room_number,
+               board_game_id,
+               code,
+               message,
+               created_at
+          FROM mc_violation_log
+         WHERE session_id = #{sessionId}::uuid
+         ORDER BY created_at
+    </select>
+</mapper>

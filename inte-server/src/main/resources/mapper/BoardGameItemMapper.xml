@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.BoardGameItemMapper">
+
+    <select id="findAll" resultType="map">
+        SELECT * FROM board_game_item LIMIT 10
+    </select>
+
+    <!--
+      재고 선점. FOR UPDATE SKIP LOCKED 가 동시 대여의 핵심이다.
+      두 방이 마지막 한 벌을 동시에 요청하면 한쪽은 행을 잠그고, 다른 쪽은 그 행을
+      건너뛰어 0건을 받는다 -> 재고 없음(409)으로 정상 처리된다. 락 대기도 이중 대여도 없다.
+    -->
+    <select id="findAvailableItemForUpdate" resultType="BoardGameItem">
+        SELECT item_id, board_game_id, cabinet_id, status
+          FROM board_game_item
+         WHERE board_game_id = #{boardGameId}
+           AND status = 'available'
+         ORDER BY item_id
+         LIMIT 1
+         FOR UPDATE SKIP LOCKED
+    </select>
+
+    <update id="updateStatus">
+        UPDATE board_game_item
+           SET status = #{status}
+         WHERE item_id = #{itemId}
+    </update>
+
+    <select id="countAvailable" resultType="int">
+        SELECT COUNT(*)
+          FROM board_game_item
+         WHERE board_game_id = #{boardGameId}
+           AND status = 'available'
+    </select>
+
+    <!--
+      퇴실 정리용 일괄 재고 반납.
+      대상 사본을 rent.returned_at IS NULL 로 역추적하므로 RentMapper.returnAllByRoom 보다
+      반드시 먼저 호출해야 한다. 순서가 바뀌면 rent 가 이미 마감돼 대상이 0건이 되고
+      사본이 RENTED 로 영원히 묶인다.
+    -->
+    <update id="releaseByRoom">
+        UPDATE board_game_item
+           SET status = 'available'
+         WHERE item_id IN (SELECT r.board_game_item_id
+                             FROM rent r
+                            WHERE r.room_number = #{roomNumber}
+                              AND r.returned_at IS NULL)
+    </update>
+
+</mapper>

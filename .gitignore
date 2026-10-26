@@ -1,0 +1,34 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local configuration and secrets
+.env*
+!.env.example
+**/config/*.yaml
+**/config/*.yml
+!table/wakeword/config/development.yaml
+!**/config/*.example.yaml
+!**/config/*.example.yml
+secrets/
+credentials/
+*.key
+*.pem
+
+# Generated and large local artifacts
+*.log
+**/reports/*.json
+*.training.json
+*.verification.json
+checkpoints/
+*.onnx
+!table/wakeword/models/*.onnx
+*.pt
+*.wav
+*.zip

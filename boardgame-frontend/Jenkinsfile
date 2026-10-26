@@ -1,0 +1,72 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = 'boardgame-frontend'
+        CONTAINER_NAME = 'boardgame-frontend'
+        DEPLOY_DIR = '/home/ubuntu' // docker-compose.yml이 위치한 서버 경로
+    }
+
+    stages {
+        stage('Checkout') { 
+            steps {
+                checkout scm
+            } 
+        }
+
+        stage('Build Docker Image') {
+            when {
+                changeset "boardgame-frontend/**"
+            }
+            steps {
+                dir('boardgame-frontend') {
+                    withCredentials([
+                        string(credentialsId: 'VITE_ELEVENLABS_VOICE_ID', variable: 'VITE_ELEVENLABS_VOICE_ID'),
+                        string(credentialsId: 'VITE_ELEVENLABS_API_KEY', variable: 'VITE_ELEVENLABS_API_KEY')
+                    ]) {
+                        sh """
+                            docker build \
+                              --build-arg VITE_ELEVENLABS_VOICE_ID=\$VITE_ELEVENLABS_VOICE_ID \
+                              --build-arg VITE_ELEVENLABS_API_KEY=\$VITE_ELEVENLABS_API_KEY \
+                              -t ${IMAGE_NAME}:${BUILD_NUMBER} .
+                        """
+                    }
+                    sh "docker tag ${IMAGE_NAME}:${BUILD_NUMBER} ${IMAGE_NAME}:latest"
+                }
+            }
+        }
+
+        stage('Deploy') {
+            when {
+                changeset "boardgame-frontend/**"
+            }
+            steps {
+                sh """
+                    cd ${DEPLOY_DIR}
+                    echo "boardgame-frontend:${BUILD_NUMBER}" >> deployed_versions.log
+
+                    FRONTEND_TAG=${BUILD_NUMBER} docker compose up -d boardgame-frontend
+                """
+            }
+        }
+
+        stage('Cleanup') {
+            when {
+                changeset "boardgame-frontend/**"
+            }
+            steps {
+                // 오래된 이미지 정리
+                sh 'docker image prune -f'
+            } 
+        }
+    }
+
+    post {
+        success {
+            echo '배포 성공! 🚀'
+        }
+        failure {
+            echo '배포 실패 ❌'
+        }
+    }
+}

@@ -1,0 +1,137 @@
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+        # - ./nginx/conf.d:/etc/nginx/conf.d
+
+    depends_on:
+      - inte-server
+      - jenkins
+      - boardgame-frontend
+
+    restart: always
+
+    networks:
+      - boardgame-network
+
+  inte-server:
+    image: inte-server:${INTE_TAG:-latest}
+    container_name: inte-server
+
+    restart: always
+
+    expose:
+      - "8111"
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/boardgame
+      SPRING_DATASOURCE_USERNAME: ssafy
+      SPRING_DATASOURCE_PASSWORD: ssafy
+
+      SERVER_ADDRESS: "0.0.0.0"
+
+      MQTT_HOST: mqtt
+      MQTT_PORT: 1883
+
+      TZ: "Asia/Seoul"
+    depends_on:
+      - postgres
+      - mqtt
+
+    networks:
+      - boardgame-network
+
+  postgres:
+    image: postgres:16
+
+    container_name: postgres
+
+    restart: always
+
+    environment:
+      POSTGRES_DB: boardgame
+      POSTGRES_USER: ssafy
+      POSTGRES_PASSWORD: ssafy
+      TZ: "Asia/Seoul"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+    ports:
+      - "8432:5432"
+
+    networks:
+      - boardgame-network
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    restart: always
+    environment:
+      TZ: "Asia/Seoul"
+    ports:
+      - "8334:6333" # HTTP API 및 웹 대시보드
+    volumes:
+      - qdrant-data:/qdrant/storage
+    networks:
+      - boardgame-network
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    restart: always
+    environment:
+      TZ: "Asia/Seoul"
+    user: root  # Docker 외부 통신 및 빌드 권한 문제 방지
+    ports:
+      - "8999:8080"   # Jenkins 웹 GUI 포트
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock # Jenkins 안에서 Docker 명령어를 실행(DooD)하기 위한 설정
+      - /home/ubuntu:/home/ubuntu
+    networks:
+      - boardgame-network
+
+  mqtt:
+    image: eclipse-mosquitto:2
+    container_name: mqtt
+    restart: always
+    environment:
+      TZ: "Asia/Seoul"
+    ports:
+      - "8113:1883" # MQTT 기본 포트
+      - "8114:9001"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+      - ./mosquitto/config/passwd:/mosquitto/config/passwd
+    networks:
+      - boardgame-network
+
+  boardgame-frontend:
+    image: boardgame-frontend:${FRONTEND_TAG:-latest}  # 또는 build: . 로 직접 빌드 가능
+    container_name: boardgame-frontend
+    restart: always
+    expose:
+      - "8333" # Nginx와 내부 통신용 포트
+    networks:
+      - boardgame-network
+
+volumes:
+  postgres-data:
+  jenkins-data:
+  mosquitto-config:
+  mosquitto-data:
+  mosquitto-log:
+  qdrant-data:
+
+networks:
+  boardgame-network:

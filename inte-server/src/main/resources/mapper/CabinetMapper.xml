@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.CabinetMapper">
+
+    <!--
+      created_at 은 DEFAULT now() 라 넘기지 않는다.
+      transaction_id 에 PK/UNIQUE 가 없어 QoS 1 재전송 시 같은 행이 두 번 들어갈 수 있다.
+      제약을 걸면 ON CONFLICT (transaction_id) DO NOTHING 으로 멱등하게 바꿀 수 있다.
+    -->
+    <insert id="insertCabinetTransaction">
+        INSERT INTO cabinet_transaction (transaction_id, card_uid, room_number)
+        VALUES (#{transactionId}, #{cardUid}, #{roomNumber})
+        ON CONFLICT (transaction_id) DO NOTHING
+    </insert>
+
+    <!-- cabinet_log_id 는 GENERATED ALWAYS AS IDENTITY, created_at 은 DEFAULT NOW() -->
+    <insert id="insertCabinetHistory">
+        INSERT INTO cabinet_history ( transaction_id, cabinet_id, event_type, triggered_by, step )
+        VALUES (
+            #{transactionId},
+            #{cabinetId},
+            #{eventType},
+            #{triggeredBy},
+            #{step}
+        )
+    </insert>
+
+    <!--
+      insertCabinetHistory 의 step 계산식과 같은 규칙이다. 이력이 없으면 1 부터 시작한다.
+      FROM 이 없는 SELECT 라 항상 한 행이 나오므로 primitive 로 받아도 언박싱 NPE 가 없다.
+    -->
+    <select id="findCabinetHistoryByTransactionId" resultType="CabinetHistory">
+        SELECT step, event_type
+        FROM cabinet_history
+        WHERE transaction_id = #{transactionId}
+        ORDER BY created_at DESC
+        LIMIT 1
+    </select>
+
+    <!-- PK 가 없어 중복 행이 가능하므로 LIMIT 1 이 없으면 TooManyResultsException 이 난다 -->
+    <select id="findCardUid" resultType="String">
+        SELECT card_uid
+          FROM cabinet_transaction
+         WHERE transaction_id = #{transactionId}
+         ORDER BY created_at DESC
+         LIMIT 1
+    </select>
+
+    <select id="findStatusForUpdate" resultType="String">
+        SELECT status
+          FROM cabinet
+         WHERE cabinet_id = #{cabinetId}
+           FOR UPDATE
+    </select>
+
+    <update id="updateStatus">
+        UPDATE cabinet
+           SET status = #{status}
+         WHERE cabinet_id = #{cabinetId}
+    </update>
+</mapper>

@@ -1,0 +1,135 @@
+pipeline {
+    agent any
+
+    environment {
+        // 이미지 이름 (docker-compose.yml의 image 이름과 맞춰야 함)
+        IMAGE_NAME = 'inte-server'
+        // docker-compose.yml이 위치한 경로 (Jenkins가 접근 가능해야 함)
+        DEPLOY_DIR = '/home/ubuntu'
+        // 롤백을 위해 남겨둘 이미지 개수
+        KEEP_IMAGES = 3
+    }
+
+    options {
+        // 동시에 여러 빌드가 배포를 덮어쓰지 않도록
+        disableConcurrentBuilds()
+        timestamps()
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Jar') {
+            when {
+                changeset "inte-server/**"
+            }
+            steps {
+                dir('inte-server') {
+                    sh '''
+                        chmod +x ./gradlew
+                        ./gradlew clean build -x test
+                    '''
+                    // 필요하면 -x test 빼고 테스트 포함해서 돌리세요
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            when {
+                changeset "inte-server/**"
+            }
+            steps {
+                dir('inte-server') {
+                    sh """
+                       # Dockerfile이 루트의 *.jar를 찾으므로, build/libs 산출물을 루트로 복사
+                        cp build/libs/*.jar ./
+
+                        docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} .
+                        docker tag ${IMAGE_NAME}:${BUILD_NUMBER} ${IMAGE_NAME}:latest
+
+                        # 복사해둔 jar 정리 (repo 워크스페이스 깔끔하게)
+                        rm -f ./*.jar
+                    """
+                }
+            }
+        }
+
+        stage('Deploy') {
+            when {
+                changeset "inte-server/**"
+            }
+            steps {
+                sh """
+                    cd ${DEPLOY_DIR}
+
+                    # 헬스체크 실패 시 대비해 이전 TAG 기록
+                    echo "inte-server:${BUILD_NUMBER}" >> deployed_versions.log
+
+                    # INTE_TAG 변수를 직접 전달하며 inte-server만 배포
+                    INTE_TAG=${BUILD_NUMBER} docker compose up -d inte-server
+                """
+            }
+        }
+
+        stage('Health Check') {
+            when {
+                changeset "inte-server/**"
+            }
+            steps {
+                script {
+                    def healthy = false
+                    // 최대 30초 동안 5초 간격으로 헬스체크 (Spring Actuator 기준, 필요시 경로 수정)
+                    for (int i = 0; i < 6; i++) {
+                        sleep(5)
+                        def result = sh(
+                            script: "curl -s -o /dev/null -w '%{http_code}' http://nginx/inte/health || true",
+                            returnStdout: true
+                        ).trim()
+                        if (result == '200') {
+                            healthy = true
+                            break
+                        }
+                    }
+                    if (!healthy) {
+                        error("헬스체크 실패 - 배포 중단 및 확인 필요")
+                    }
+                }
+            }
+        }
+
+        stage('Cleanup Old Images') {
+            when {
+                changeset "inte-server/**"
+            }
+            steps {
+                sh """
+                    # 태그 번호 기준으로 오래된 이미지 정리 (최근 KEEP_IMAGES개만 유지)
+                    docker images ${IMAGE_NAME} --format '{{.Tag}}' \
+                        | grep -E '^[0-9]+\$' \
+                        | sort -rn \
+                        | tail -n +\$((${KEEP_IMAGES} + 1)) \
+                        | xargs -r -I{} docker rmi ${IMAGE_NAME}:{} || true
+
+                    # dangling 이미지 정리
+                    docker image prune -f
+                """
+            }
+        }
+    }
+
+    post {
+        failure {
+            echo "빌드 또는 배포 실패. 필요 시 아래 명령으로 롤백하세요:"
+            echo "cd ${DEPLOY_DIR} && echo TAG=<이전_빌드번호> > .env && docker compose up -d"
+        }
+        always {
+            // 워크스페이스 정리 (선택)
+            cleanWs()
+        }
+    }
+}

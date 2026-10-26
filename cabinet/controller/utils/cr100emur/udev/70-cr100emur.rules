@@ -1,0 +1,7 @@
+# CR-100EMUR / CR100-EM(232): CP2102 USB-to-serial bridge.
+#
+# serial=0001 is included because 10c4:ea60 is used by many unrelated CP2102
+# products. TAG+="uaccess" grants the active local session access, while MODE
+# keeps the device non-world-writable on headless systems.
+ACTION=="add|change", SUBSYSTEM=="tty", KERNEL=="ttyUSB[0-9]*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="0001", SYMLINK+="cr100emur", MODE:="0660", TAG+="uaccess"
+

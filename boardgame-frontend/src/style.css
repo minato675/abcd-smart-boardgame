@@ -1,0 +1,202 @@
+@import 'tailwindcss';
+
+/**
+ * 보드게임 카페 태블릿 디자인 토큰 (1024 x 600).
+ * 따뜻한 라운지 톤 + 잉크/인디고 액센트. 컴포넌트는 이 시맨틱 유틸리티만 쓴다.
+ */
+@theme {
+  /* 텍스트 */
+  --color-ink: #111111;
+  --color-body: #2f2f2f;
+  --color-subtle: #64748b;
+  --color-muted: #9c9ca1;
+
+  /* 액센트 (선택 상태 · 링크 · 단계 번호에만) */
+  --color-accent: #6366f1;
+  --color-accent-strong: #2d35e8;
+  --color-accent-soft: #e9e9fd;
+  --color-accent-softer: #f4f4fe;
+
+  /* 면 */
+  --color-canvas: #faf6ee;
+  --color-surface: #ffffff;
+  --color-sunken: #f8fafc;
+
+  /* 램프 톤 — 방 정보 · 예약 대기 */
+  --color-warm: #9e7120;
+  --color-warm-bg: #faf3e6;
+
+  /* 선 */
+  --color-line: #ebebec;
+  --color-line-soft: #f0f0f2;
+
+  /* 상태 (채도 낮게) */
+  --color-ok: #347c58;
+  --color-ok-bg: #e9f4ee;
+  --color-danger: #b24646;
+  --color-danger-bg: #faecec;
+
+  /*
+   * 루미큐브 타일 색. 진행자가 보내는 color 값과 1:1 이다(빨강/파랑/검정/주황 4색).
+   * 판본에 따라 주황을 노랑이라 부르기도 해서 둘을 같은 토큰에 매핑한다.
+   *
+   * 타일은 bg-surface 위에 얹히므로 검정은 고정색이 아니라 전경색이어야 한다 —
+   * #111 로 두면 다크 테마의 어두운 타일 위에서 보이지 않는다.
+   */
+  --color-tile-red: #d13b3b;
+  --color-tile-blue: #2f6fd0;
+  --color-tile-orange: #d9822b;
+  --color-tile-black: #111111;
+
+  /*
+   * 데이터 시각화 슬롯 (관리자 대시보드 전용).
+   *
+   * 계열 식별용 8색은 고정 순서로만 배정한다 — 순서 자체가 색각 이상 안전성의
+   * 근거라서 섞으면 검증이 무효가 된다. 9번째 계열은 새 색을 만들지 않고
+   * '기타'(viz-other)로 접는다. 자세한 규칙은 src/admin/charts/palette.ts 참고.
+   *
+   * 라이트 표면(#ffffff)에서 viz-3 / viz-4 / viz-5 는 대비 3:1 미만이라
+   * 반드시 직접 라벨이나 표 보기를 함께 제공해야 한다(ChartCard 의 '표로 보기').
+   */
+  --color-viz-1: #2a78d6;
+  --color-viz-2: #eb6834;
+  --color-viz-3: #1baf7a;
+  --color-viz-4: #eda100;
+  --color-viz-5: #e87ba4;
+  --color-viz-6: #008300;
+  --color-viz-7: #4a3aa7;
+  --color-viz-8: #e34948;
+  /* 계열이 8개를 넘을 때 접어 넣는 '기타' */
+  --color-viz-other: #a3a3ab;
+
+  /* 순서가 있는 축척(퍼널 단계·난이도). 낮음 → 높음 순으로 진해진다. */
+  --color-viz-step-1: #86b6ef;
+  --color-viz-step-2: #5598e7;
+  --color-viz-step-3: #2a78d6;
+  --color-viz-step-4: #1c5cab;
+
+  /* 차트 크롬 — 데이터보다 항상 뒤로 물러나야 한다 */
+  --color-viz-grid: #ececed;
+  --color-viz-axis: #d8d8dc;
+  /* 강조 대비용 회색(스파크라인의 과거 구간 등) */
+  --color-viz-mute: #cfcfd4;
+
+  /* 라운딩 — 컨트롤은 전부 pill(rounded-full) */
+  --radius-field: 12px;
+  --radius-card: 16px;
+  --radius-modal: 20px;
+
+  --font-sans: 'Pretendard', 'Noto Sans KR', system-ui, 'Segoe UI',
+    'Malgun Gothic', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* 조명 어두운 방을 위한 다크 테마. AppHeader 의 토글이 html[data-theme] 을 바꾼다. */
+:root[data-theme='dark'] {
+  --color-ink: #f5f5f6;
+  --color-body: #e1e1e3;
+  --color-subtle: #94a3b8;
+  --color-muted: #787880;
+  --color-accent: #8184fa;
+  --color-accent-strong: #6366f1;
+  --color-accent-soft: rgba(99, 102, 241, 0.18);
+  --color-accent-softer: rgba(99, 102, 241, 0.12);
+  --color-canvas: #131114;
+  --color-surface: #1b1a1d;
+  --color-sunken: #232227;
+  --color-warm: #e0b25a;
+  --color-warm-bg: rgba(224, 178, 90, 0.14);
+  --color-line: rgba(255, 255, 255, 0.18);
+  --color-line-soft: rgba(255, 255, 255, 0.08);
+  --color-ok: #6ec498;
+  --color-ok-bg: rgba(52, 124, 88, 0.22);
+  --color-danger: #e08c8c;
+  --color-danger-bg: rgba(178, 70, 70, 0.22);
+  /* 어두운 타일 배경에서 읽히도록 밝게. 검정 타일은 전경색을 따라간다. */
+  --color-tile-red: #f08a8a;
+  --color-tile-blue: #85b2f5;
+  --color-tile-orange: #efb069;
+  --color-tile-black: #f5f5f6;
+
+  /*
+   * 시각화 슬롯의 다크 표면(#1b1a1d)용 단계. 라이트 값을 자동으로 뒤집은 게 아니라
+   * 같은 8개 색상군을 어두운 배경에 맞춰 다시 고른 것이고, 그 상태로 검증했다
+   * (다크에서는 8슬롯 전부 대비 3:1 이상이라 라이트에 있던 제약이 없다).
+   */
+  --color-viz-1: #3987e5;
+  --color-viz-2: #d95926;
+  --color-viz-3: #199e70;
+  --color-viz-4: #c98500;
+  --color-viz-5: #d55181;
+  --color-viz-6: #008300;
+  --color-viz-7: #9085e9;
+  --color-viz-8: #e66767;
+  --color-viz-other: #6f6f78;
+
+  /* 어두운 배경에서는 '많을수록 밝게' 가 자연스럽다 — 라이트와 방향이 반대다 */
+  --color-viz-step-1: #184f95;
+  --color-viz-step-2: #2a78d6;
+  --color-viz-step-3: #6da7ec;
+  --color-viz-step-4: #9ec5f4;
+
+  --color-viz-grid: rgba(255, 255, 255, 0.1);
+  --color-viz-axis: rgba(255, 255, 255, 0.22);
+  --color-viz-mute: rgba(255, 255, 255, 0.24);
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-canvas);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent-strong);
+  text-decoration: underline;
+}
+
+/* 태블릿 프레임 안쪽 스크롤 영역용 얇은 스크롤바 */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--color-line);
+}
+
+/* 규칙 도우미 오버레이의 음성 웨이브 */
+.wave-bar {
+  transform-origin: center;
+  animation: voice-wave 900ms ease-in-out infinite;
+}
+
+@keyframes voice-wave {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+  }
+  50% {
+    transform: scaleY(1.15);
+  }
+}

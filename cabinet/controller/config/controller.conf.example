@@ -1,0 +1,29 @@
+controller_id=rpi-01
+
+mqtt_host=192.168.0.10
+mqtt_port=1883
+mqtt_username=cabinet-controller
+mqtt_password=change-me
+mqtt_keepalive_seconds=30
+
+# CR-100EMUR stable udev path supplied by utils/cr100emur.
+rfid_device=/dev/cr100emur
+rfid_baud=9600
+
+# Cabinet number to already-bound RFCOMM TTY mapping.
+cabinet.1=/dev/rfcomm0
+cabinet.2=/dev/rfcomm1
+cabinet.3=/dev/rfcomm2
+
+# Optional addresses let setup-rfcomm.sh create the bindings. Pairing remains
+# an explicit installation step and is intentionally outside the MVP.
+# cabinet.1.address=00:11:22:33:44:55
+# cabinet.1.channel=1
+# cabinet.2.address=00:11:22:33:44:66
+# cabinet.2.channel=1
+# cabinet.3.address=00:11:22:33:44:77
+# cabinet.3.channel=1
+
+command_ack_timeout_ms=2000
+communication_timeout_ms=5000
+server_timeout_ms=10000

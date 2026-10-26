@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "manifestId", "manifestRevision", "createdAt", "expiresAt", "qualityTargetMet", "provenance", "runtime", "artifacts", "mapping", "perModelEvaluation", "decisionProfile", "evaluation", "metrics", "pipelineGates", "approvals"],
+  "properties": {
+    "schemaVersion": {"type": "integer", "minimum": 1},
+    "manifestId": {"type": "string", "format": "uuid"},
+    "manifestRevision": {"type": "integer", "minimum": 1},
+    "createdAt": {"type": "string"},
+    "expiresAt": {"type": "string"},
+    "qualityTargetMet": {"const": true},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "runtime": {"$ref": "#/$defs/runtime"},
+    "artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact"}},
+    "mapping": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/mapping"}},
+    "perModelEvaluation": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/evaluation"}},
+    "decisionProfile": {"$ref": "#/$defs/decisionProfile"},
+    "evaluation": {"$ref": "#/$defs/evaluationSet"},
+    "metrics": {"type": "object", "additionalProperties": {"$ref": "#/$defs/metric"}},
+    "pipelineGates": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/gate"}},
+    "approvals": {"$ref": "#/$defs/approvals"}
+  },
+  "$defs": {
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["trainingRun", "configRevision", "dataRevision", "sourceCommit", "buildId"], "properties": {"trainingRun": {"type": "string"}, "configRevision": {"type": "string"}, "dataRevision": {"type": "string"}, "sourceCommit": {"type": "string"}, "buildId": {"type": "string"}}},
+    "runtime": {"type": "object", "additionalProperties": false, "required": ["openWakeWordCommit", "onnxRuntimeVersion", "pythonAbi", "platform", "provider", "threads"], "properties": {"openWakeWordCommit": {"type": "string"}, "onnxRuntimeVersion": {"type": "string"}, "pythonAbi": {"type": "string"}, "platform": {"type": "string"}, "provider": {"type": "string"}, "threads": {"type": "integer", "minimum": 1}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifactId", "role", "relativePath", "byteLength", "sha256"], "properties": {"artifactId": {"type": "string"}, "role": {"type": "string"}, "relativePath": {"type": "string"}, "byteLength": {"type": "integer", "minimum": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "onnx": {"type": "object", "additionalProperties": false, "properties": {"inputName": {"type": "string"}, "outputName": {"type": "string"}, "inputDtype": {"type": "integer"}, "outputDtype": {"type": "integer"}, "inputShape": {"type": "array"}, "outputShape": {"type": "array"}, "opset": {"type": "integer"}}}}},
+    "mapping": {"type": "object", "additionalProperties": false, "required": ["modelId", "phrase", "wireStatus", "classifierArtifactId"], "properties": {"modelId": {"enum": ["ssafiya", "nae_teon_kkeutnasseo"]}, "phrase": {"type": "string"}, "wireStatus": {"enum": ["call", "finish"]}, "classifierArtifactId": {"type": "string"}}},
+    "gate": {"type": "object", "additionalProperties": false, "required": ["gateId", "comparator", "limit", "measured", "passed"], "properties": {"gateId": {"type": "string"}, "comparator": {"type": "string"}, "limit": {}, "measured": {}, "confidenceBound": {}, "numerator": {"type": "integer", "minimum": 0}, "denominator": {"type": "integer", "minimum": 1}, "hours": {"type": "number", "minimum": 0}, "passed": {"type": "boolean"}}},
+    "evaluation": {"type": "object", "additionalProperties": false, "required": ["modelId", "evaluationReportArtifactId", "qualityTargetMet", "gateResults"], "properties": {"modelId": {"enum": ["ssafiya", "nae_teon_kkeutnasseo"]}, "evaluationReportArtifactId": {"type": "string"}, "qualityTargetMet": {"type": "boolean"}, "gateResults": {"type": "array", "items": {"$ref": "#/$defs/gate"}}}},
+    "decisionProfile": {"type": "object", "additionalProperties": false, "required": ["profileSha256", "models", "arbitrationFrames", "collisionMargin", "ambiguousSuppressionFrames"], "properties": {"profileSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "models": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["modelId", "triggerThreshold", "evidenceWindowFrames", "requiredHits", "vadMode"], "properties": {"modelId": {"type": "string"}, "triggerThreshold": {"type": "number"}, "evidenceWindowFrames": {"type": "integer"}, "requiredHits": {"type": "integer"}, "vadMode": {"enum": ["off", "observe", "gate"]}, "vadThreshold": {"type": ["number", "null"]}, "vadContextOldestLagFrames": {"type": ["integer", "null"]}, "vadContextNewestLagFrames": {"type": ["integer", "null"]}, "vadAggregate": {"type": ["string", "null"]}}}}, "arbitrationFrames": {"type": "integer"}, "collisionMargin": {"type": ["number", "null"]}, "ambiguousSuppressionFrames": {"type": "integer"}}},
+    "evaluationSet": {"type": "object", "additionalProperties": false, "required": ["calibrationRevision", "finalTestRevision", "disjointSplit", "counts", "negativeHours", "targetHardware"], "properties": {"calibrationRevision": {"type": "string"}, "finalTestRevision": {"type": "string"}, "disjointSplit": {"type": "boolean"}, "counts": {"type": "object", "patternProperties": {"^[A-Za-z0-9_.-]+$": {"type": "integer", "minimum": 0}}, "additionalProperties": false}, "negativeHours": {"type": "number", "minimum": 0}, "targetHardware": {"type": "string"}}},
+    "metric": {"type": "object", "additionalProperties": false, "required": ["value", "confidenceMethod"], "properties": {"value": {}, "numerator": {"type": "integer", "minimum": 0}, "denominator": {"type": "integer", "minimum": 1}, "hours": {"type": "number", "minimum": 0}, "confidenceMethod": {"type": "string"}, "confidenceBound": {}}},
+    "approvals": {"type": "object", "additionalProperties": false, "required": ["mqttContractRevision", "qualityTargetRevision", "privacyApprovalId", "datasetLicenseApprovalId"], "properties": {"mqttContractRevision": {"type": "string"}, "qualityTargetRevision": {"type": "string"}, "privacyApprovalId": {"type": "string"}, "datasetLicenseApprovalId": {"type": "string"}}}
+  }
+}

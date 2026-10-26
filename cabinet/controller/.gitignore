@@ -1,0 +1,12 @@
+/.venv/
+
+/build/
+/build-*/
+/CMakeUserPresets.json
+/compile_commands.json
+__pycache__/
+*.pyc
+
+# Local runtime configuration can contain MQTT credentials.
+/config/controller.conf
+*.log

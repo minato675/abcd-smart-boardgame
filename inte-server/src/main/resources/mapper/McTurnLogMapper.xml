@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.McTurnLogMapper">
+
+    <!--
+      session_id 는 UUID, table_state 는 JSONB 컬럼인데 자바에서는 둘 다 String 이다.
+      캐스팅이 없으면 "column is of type uuid/jsonb but expression is of type character
+      varying" 로 실패한다(QnaLogMapper 의 ::uuid 와 같은 이유).
+
+      turn_no 는 페이로드에 없어 같은 세션의 최대값 + 1 로 매긴다. 한 방의 턴은 순차로
+      들어오므로 경합이 사실상 없고, 그래도 겹치면 uq_mc_turn_log_session_turn 이 막는다.
+
+      turn_log_id 는 GENERATED ALWAYS AS IDENTITY, created_at 은 DEFAULT now() 라
+      RETURNING 으로 회수한다. turn_no 는 여기서 계산하므로 같이 돌려받아야
+      호출자가 몇 번째 턴이었는지 알 수 있다.
+    -->
+    <insert id="insert" parameterType="McTurnLog"
+            useGeneratedKeys="true"
+            keyProperty="turnLogId,turnNo,createdAt"
+            keyColumn="turn_log_id,turn_no,created_at">
+        INSERT INTO mc_turn_log (session_id, room_number, turn_no, tile_count, table_state)
+        SELECT #{sessionId}::uuid,
+               #{roomNumber},
+               COALESCE(MAX(turn_no), 0) + 1,
+               #{tileCount},
+               #{tableState}::jsonb
+          FROM mc_turn_log
+         WHERE session_id = #{sessionId}::uuid
+    </insert>
+
+    <select id="findBySession" resultType="McTurnLog">
+        SELECT turn_log_id,
+               session_id,
+               room_number,
+               turn_no,
+               tile_count,
+               table_state,
+               created_at
+          FROM mc_turn_log
+         WHERE session_id = #{sessionId}::uuid
+         ORDER BY turn_no
+    </select>
+
+    <!-- turn_no 가 순증하므로 최대값이 곧 마지막으로 생성된 행이다 -->
+    <select id="findLatestBySession" resultType="McTurnLog">
+        SELECT turn_log_id,
+               session_id,
+               room_number,
+               turn_no,
+               tile_count,
+               table_state,
+               created_at
+          FROM mc_turn_log
+         WHERE session_id = #{sessionId}::uuid
+         ORDER BY turn_no DESC
+         LIMIT 1
+    </select>
+</mapper>

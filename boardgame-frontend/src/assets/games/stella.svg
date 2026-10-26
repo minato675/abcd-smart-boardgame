@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" role="img" aria-label="스텔라">
+  <!-- 별자리를 잇는 선. 'stella = 별' 을 그대로 쓴다. -->
+  <defs>
+    <linearGradient id="stella-sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2244" />
+      <stop offset="1" stop-color="#39457a" />
+    </linearGradient>
+    <!-- 광채. 단색 원으로 깔면 배경 위에 탁한 회색 원으로 보인다. -->
+    <radialGradient id="stella-glow">
+      <stop offset="0" stop-color="#f2d999" stop-opacity=".55" />
+      <stop offset="1" stop-color="#f2d999" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="88" height="88" fill="url(#stella-sky)" />
+
+  <g fill="#f7e9c0">
+    <circle cx="14" cy="20" r="1" opacity=".45" />
+    <circle cx="76" cy="18" r="1.2" opacity=".5" />
+    <circle cx="24" cy="76" r="1" opacity=".4" />
+    <circle cx="72" cy="76" r="1.1" opacity=".45" />
+    <circle cx="40" cy="14" r="1" opacity=".4" />
+  </g>
+
+  <polyline
+    points="20,60 32,42 48,50 58,28 70,44 62,66 48,50"
+    fill="none"
+    stroke="#f2d999"
+    stroke-width="1.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity=".5"
+  />
+
+  <circle cx="58" cy="28" r="14" fill="url(#stella-glow)" />
+
+  <g fill="#f7e9c0">
+    <circle cx="20" cy="60" r="2.6" />
+    <circle cx="32" cy="42" r="2.6" />
+    <circle cx="48" cy="50" r="2.6" />
+    <circle cx="70" cy="44" r="2.6" />
+    <circle cx="62" cy="66" r="2.6" />
+    <path d="M58 20l2.1 5.9 5.9 2.1-5.9 2.1L58 36l-2.1-5.9-5.9-2.1 5.9-2.1z" />
+  </g>
+</svg>

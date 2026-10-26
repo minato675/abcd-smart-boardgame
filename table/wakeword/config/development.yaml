@@ -1,0 +1,89 @@
+environment: development
+room_number: A402
+device_id: wake-mic-01
+allow_unverified_models: true
+
+audio:
+  device: default
+  sample_rate_hz: 16000
+  channels: 1
+  dtype: int16
+  frame_samples: 1280
+  queue_blocks: 8
+  max_callback_samples: 4096
+  max_frame_age_ms: 160
+  warmup_frames: 25
+
+mqtt:
+  host: localhost
+  port: 1883
+  protocol: "3.1.1"
+  client_id: wakeword-A402-wake-mic-01
+  clean_session: true
+  keepalive_seconds: 30
+  qos: 1
+  retain: false
+  connect_timeout_seconds: 10
+  publish_ack_timeout_seconds: 3
+  reconnect_min_seconds: 1
+  reconnect_max_seconds: 30
+  contract_version: legacy
+  resume_listening_on_reconnect: false
+  tls_enabled: false
+  ca_cert_path: null
+  username_env: null
+  password_env: null
+
+runtime:
+  inference_provider: cpu
+  onnx_threads: 1
+  max_consecutive_inference_errors: 3
+  recovery_attempts: 3
+  lock_root: /tmp/wakeword-locks
+  state_store_path: /tmp/wakeword-state.sqlite3
+  max_command_age_seconds: 300
+  clock_skew_seconds: 30
+  max_event_retry_seconds: 30
+  outbox_max_rows: 256
+  outbox_max_bytes: 1048576
+  outbox_reserved_rows: 8
+  outbox_reserved_bytes: 65536
+
+artifacts:
+  model_root: ../models
+  manifest_path: null
+  melspectrogram:
+    path: melspectrogram.onnx
+    sha256: ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f
+  embedding:
+    path: embedding_model.onnx
+    sha256: 70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f
+  vad:
+    path: silero_vad.onnx
+    sha256: a35ebf52fd3ce5f1469b2a36158dba761bc47b973ea3382b3186ca15b1f5af28
+
+decision:
+  arbitration_frames: 1
+  collision_margin: null
+  ambiguous_suppression_frames: 5
+  max_vad_history_frames: 64
+
+models:
+  - id: ssafiya
+    phrase: "싸피야"
+    wire_status: call
+    path: ssafiya.onnx
+    sha256: af96d0d297eb6bbecbab43debe8af9fff2b914454f55b6ca123b2ba120711641
+    trigger_threshold: 0.8
+    evidence_window_frames: 1
+    required_hits: 1
+    vad_mode: observe
+  - id: nae_teon_kkeutnasseo
+    phrase: "내 턴 끝났어"
+    wire_status: finish
+    path: nae_teon_kkeutnasseo.onnx
+    sha256: 95294f0a98464d3db9b19ad8a07a2d58ed485511757ce5d7583e478c43ae3473
+    trigger_threshold: 0.99
+    evidence_window_frames: 1
+    required_hits: 1
+    vad_mode: observe

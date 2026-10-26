@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.RentMapper">
+
+    <!--
+      PostgreSQL GENERATED ALWAYS AS IDENTITY 도 JDBC getGeneratedKeys 로 받을 수 있으므로
+      <selectKey> 없이 useGeneratedKeys 를 쓴다. rented_at 은 DB DEFAULT 값을 RETURNING 으로 회수한다.
+    -->
+    <insert id="insert" parameterType="RentResponse"
+            useGeneratedKeys="true" keyProperty="rentId,rentedAt" keyColumn="rent_id,rented_at">
+        <!-- 1. 기존에 RENT 상태인 데이터가 있으면 UPDATE -->
+        UPDATE rent
+        SET board_game_id = #{boardGameId},
+        board_game_item_id = #{boardGameItemId},
+        rented_at = NOW()
+        WHERE room_number = #{roomNumber}
+        AND status = 'rent';
+
+        <!-- 2. UPDATE된 행이 없을 경우에만 INSERT -->
+        INSERT INTO rent (board_game_id, board_game_item_id, room_number)
+        SELECT #{boardGameId}, #{boardGameItemId}, #{roomNumber}
+        WHERE NOT EXISTS (
+        SELECT 1 FROM rent WHERE room_number = #{roomNumber} AND status = 'rent'
+        );
+    </insert>
+
+    <!--
+      insert 의 UPDATE 가 덮어쓸 행이 붙잡고 있는 사본. 조건을 insert 와 똑같이
+      (room_number + status='rent') 두어야 실제로 덮어쓰이는 행과 여기서 찾는 행이
+      같은 한 건이 된다. 그 UPDATE 때문에 방에 'rent' 행은 하나뿐이지만 LIMIT 1 을 걸어 둔다.
+    -->
+    <select id="findUnpickedItemId" resultType="Long">
+        SELECT board_game_item_id
+          FROM rent
+         WHERE room_number = #{roomNumber}
+           AND status      = 'rent'
+         LIMIT 1
+    </select>
+
+    <select id="countActiveRent" resultType="int">
+        SELECT COUNT(*)
+          FROM rent
+         WHERE room_number   = #{roomNumber}
+           AND board_game_id = #{boardGameId}
+           AND returned_at IS NULL
+    </select>
+
+    <!--
+      방이 아직 반납하지 않은 대여 전체. 태블릿이 '우리 방이 들고 있는 게임' 을 복원하는 데 쓴다.
+      countActiveRent 와 같은 조건(returned_at IS NULL)이라 두 판정이 어긋나지 않는다 —
+      여기 나오는 게임은 재대여/예약이 ALREADY_RENTED 로 거절되는 게임과 정확히 같은 집합이다.
+      idx_rent_room_active 부분 인덱스가 이 조건을 커버한다.
+      USING 을 먼저 두는 것은 findActiveRent 와 같은 우선순위다(카드 태그가 반납부터 처리한다).
+    -->
+    <select id="findActiveRentsByRoom" resultType="ActiveRentResponse">
+        SELECT r.rent_id,
+               r.board_game_id,
+               bg.name AS board_game_name,
+               r.board_game_item_id,
+               i.cabinet_id,
+               r.status,
+               r.rented_at
+          FROM rent r
+          JOIN board_game bg      ON bg.board_game_id = r.board_game_id
+          LEFT JOIN board_game_item i ON i.item_id    = r.board_game_item_id
+         WHERE r.room_number = #{roomNumber}
+           AND r.returned_at IS NULL
+         ORDER BY CASE WHEN r.status = 'using' THEN 1 ELSE 2 END, r.rented_at DESC
+    </select>
+
+    <!--
+      퇴실 일괄 반납. 손님이 반납 처리 없이 나가는 경우가 있어 방 단위로 마감한다.
+      returned_at IS NULL 조건이 UPDATE 안에 있으므로 두 번 호출돼도 두 번째는 0건이다(멱등).
+      play_time_sec 은 반납 시 계산하는 컬럼이라 개별 반납과 동일하게 여기서도 채워 준다.
+      idx_rent_room_active 부분 인덱스가 이 조건을 그대로 커버한다.
+    -->
+    <update id="returnAllByRoom">
+        UPDATE rent
+           SET returned_at   = NOW(),
+               play_time_sec = EXTRACT(EPOCH FROM (NOW() - rented_at))::INT
+         WHERE room_number = #{roomNumber}
+           AND returned_at IS NULL
+    </update>
+
+    <!--
+      퇴실 정리로 재고에 돌아올 게임들. returnAllByRoom 과 같은 조건(returned_at IS NULL)이라
+      여기 나온 게임이 곧 그 방이 반납하게 될 게임이다. 한 방이 같은 게임을 두 벌 들 수는 없지만
+      조회 자체는 DISTINCT 로 막아 둔다(알림을 두 번 보낼 이유가 없다).
+      idx_rent_room_active 부분 인덱스가 이 조건을 그대로 커버한다.
+    -->
+    <select id="findActiveBoardGameIds" resultType="Long">
+        SELECT DISTINCT board_game_id
+          FROM rent
+         WHERE room_number = #{roomNumber}
+           AND returned_at IS NULL
+    </select>
+
+    <select id="findRoomNumber" resultType="String">
+        SELECT room_number
+        FROM room_rfid
+        WHERE controller_id = #{controllerId}
+        AND rfid = #{rfid}
+    </select>
+
+    <!--
+      열어야 할 사물함 번호와 그 사물함을 여는 이유가 되는 대여 상태를 한 번에 가져온다.
+      두 값을 따로 조회하면 그 사이에 상태가 바뀌어 연 사물함과 알려 준 mode 가 어긋날 수 있다.
+      USING(반납) 을 먼저 두는 것은 findActiveRent 와 같은 우선순위다 —
+      닫힘 보고 때 전이시킬 대여와 지금 여는 사물함이 같은 한 건이어야 한다.
+    -->
+    <select id="findCabinetOpenTarget" resultType="CabinetOpenTarget">
+        SELECT b.cabinet_id AS cabinet_number,
+               r.status     AS rent_status
+        FROM rent r
+        LEFT JOIN board_game_item b
+        ON r.board_game_item_id = b.item_id
+        WHERE r.room_number = #{roomNumber}
+        AND r.status IN ('rent', 'using')
+        ORDER BY CASE WHEN r.status = 'using' THEN 1 ELSE 2 END
+        LIMIT 1;
+    </select>
+
+    <!-- findCabinetNumber 와 같은 우선순위(USING 먼저)를 써야 열었던 사물함과 대상 대여가 일치한다 -->
+    <select id="findActiveRent" resultType="ActiveRent">
+        SELECT rent_id, status, board_game_id, board_game_item_id
+          FROM rent
+         WHERE room_number = #{roomNumber}
+           AND status IN ('rent', 'using')
+         ORDER BY CASE WHEN status = 'using' THEN 1 ELSE 2 END
+         LIMIT 1
+    </select>
+
+    <!-- status 조건이 UPDATE 안에 있어 중복 수신 시 두 번째는 0건이다(멱등) -->
+    <update id="markUsing">
+        UPDATE rent
+           SET status = 'using'
+         WHERE rent_id = #{rentId}
+           AND status  = 'rent'
+    </update>
+
+    <update id="markReturned">
+        UPDATE rent
+           SET status        = 'returned',
+               returned_at   = NOW(),
+               play_time_sec = EXTRACT(EPOCH FROM (NOW() - rented_at))::INT
+         WHERE rent_id     = #{rentId}
+           AND status      = 'using'
+           AND returned_at IS NULL
+    </update>
+</mapper>

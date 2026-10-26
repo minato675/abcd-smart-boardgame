@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cr100emur"
+version = "0.2.0"
+description = "Python SDK for the CR-100EMUR 125 kHz USB RFID reader"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    {name = "CR-100EMUR Linux SDK contributors"}
+]
+keywords = ["rfid", "em4100", "serial", "cr100emur"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: C",
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Hardware :: Hardware Drivers"
+]
+
+[project.scripts]
+cr100-python = "cr100emur.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "python/src"}
+
+[tool.setuptools.packages.find]
+where = ["python/src"]
+
+[tool.setuptools.package-data]
+cr100emur = ["py.typed"]

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wakeword-module"
+version = "0.1.0"
+description = "Single-microphone openWakeWord service with MQTT coordination"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+  "numpy>=1.26,<3",
+  "scipy>=1.11,<2",
+  "soundfile>=0.12,<1",
+  "PyYAML>=6,<7",
+  "onnx>=1.16,<2",
+  "onnxruntime>=1.18,<2",
+  "paho-mqtt>=2,<3",
+  "sounddevice>=0.4,<1",
+  "openwakeword @ git+https://github.com/dscripka/openWakeWord@368c03716d1e92591906a84949bc477f3a834455",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+wakeword-replay = "wakeword_module.replay:main"
+wakeword-validate-artifacts = "wakeword_module.manifest:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

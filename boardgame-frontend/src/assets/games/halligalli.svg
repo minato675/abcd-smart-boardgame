@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" role="img" aria-label="할리갈리">
+  <!-- 종 + 딸기 5개. '같은 과일 5개면 종을 친다' 는 규칙 그대로. -->
+  <rect width="88" height="88" fill="#f6dca8" />
+
+  <rect x="41.5" y="15" width="5" height="6" rx="2.5" fill="#7d838d" />
+  <path d="M44 21c-9 0-15 8-15 19l-2 6h34l-2-6c0-11-6-19-15-19z" fill="#9aa2ad" />
+  <path d="M44 21c-4 0-7 2-9 5 2-1 4-1 6 0 3 1 5 5 5 10l3-1c0-8-2-14-5-14z" fill="#c3cad3" />
+  <rect x="24" y="46" width="40" height="5" rx="2.5" fill="#7d838d" />
+  <circle cx="44" cy="56" r="4.5" fill="#6f7681" />
+
+  <g fill="#d8483c">
+    <circle cx="16" cy="72" r="6" />
+    <circle cx="30" cy="72" r="6" />
+    <circle cx="44" cy="72" r="6" />
+    <circle cx="58" cy="72" r="6" />
+    <circle cx="72" cy="72" r="6" />
+  </g>
+  <g fill="#4f8a4a">
+    <path d="M12 67l4-3 4 3z" />
+    <path d="M26 67l4-3 4 3z" />
+    <path d="M40 67l4-3 4 3z" />
+    <path d="M54 67l4-3 4 3z" />
+    <path d="M68 67l4-3 4 3z" />
+  </g>
+</svg>

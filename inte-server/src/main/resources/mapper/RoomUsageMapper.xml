@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.RoomUsageMapper">
+
+    <sql id="usageColumns">
+        room_usage_id, room_number, start_time, end_time
+    </sql>
+
+    <!--
+      입실 멱등 처리. SELECT 후 INSERT 를 애플리케이션에서 두 단계로 나누면 두 요청이
+      동시에 통과해 열린 이용건이 2개 생길 수 있으므로, 존재 검사를 INSERT 문 안에 둔다.
+      start_time 은 컬럼 DEFAULT NOW() 에 맡긴다.
+
+      참고: room_usage 에는 (room_number) WHERE end_time IS NULL 부분 유니크 제약이 없어
+      이 NOT EXISTS 가 유일한 방어선이다. 완전히 막으려면 DB 제약을 함께 두는 편이 좋다.
+    -->
+    <insert id="insertIfAbsent">
+        INSERT INTO room_usage (room_number)
+        SELECT #{roomNumber}
+         WHERE NOT EXISTS (SELECT 1
+                             FROM room_usage
+                            WHERE room_number = #{roomNumber}
+                              AND end_time IS NULL)
+    </insert>
+
+    <!--
+      퇴실 마감. end_time IS NULL 조건이 UPDATE 안에 있어 두 번 호출되면 두 번째는 0건이다(멱등).
+      idx_room_usage_room (room_number, end_time) 이 이 조건을 그대로 커버한다.
+    -->
+    <update id="closeByRoom">
+        UPDATE room_usage
+           SET end_time = NOW()
+         WHERE room_number = #{roomNumber}
+           AND end_time IS NULL
+    </update>
+
+    <select id="findOpenByRoom" resultType="RoomUsageResponse">
+        SELECT <include refid="usageColumns"/>
+          FROM room_usage
+         WHERE room_number = #{roomNumber}
+           AND end_time IS NULL
+         ORDER BY room_usage_id DESC
+         LIMIT 1
+    </select>
+
+    <select id="findLatestByRoom" resultType="RoomUsageResponse">
+        SELECT <include refid="usageColumns"/>
+          FROM room_usage
+         WHERE room_number = #{roomNumber}
+         ORDER BY room_usage_id DESC
+         LIMIT 1
+    </select>
+
+</mapper>

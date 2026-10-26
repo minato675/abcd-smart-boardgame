@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.boardgame.mapper.QnaLogMapper">
+
+    <!--
+      transaction_id 컬럼이 UUID 타입인데 자바에서는 String 으로 들고 있다.
+      ::uuid 캐스팅이 없으면 "column is of type uuid but expression is of type
+      character varying" 로 실패한다. 형식이 UUID 가 아니면 여기서 에러가 나므로
+      잘못된 값이 조용히 쌓이지 않는다.
+
+      qna_log_id 는 GENERATED ALWAYS AS IDENTITY, created_at 은 DEFAULT now() 라
+      RETURNING 으로 회수한다(RentMapper.insert 와 같은 방식).
+    -->
+    <insert id="insert" parameterType="QnaLog"
+            useGeneratedKeys="true" keyProperty="qnaLogId,createdAt" keyColumn="qna_log_id,created_at">
+        INSERT INTO qna_log (transaction_id, room_number, board_game_id, req, res)
+        VALUES (
+            #{transactionId}::uuid,
+            #{roomNumber},
+            #{boardGameId},
+            #{req},
+            #{res}
+        )
+    </insert>
+</mapper>

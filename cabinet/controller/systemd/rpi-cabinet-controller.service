@@ -1,0 +1,31 @@
+[Unit]
+Description=RFID cabinet controller
+Wants=network-online.target bluetooth.target
+After=network-online.target bluetooth.target
+
+[Service]
+Type=simple
+User=cabinet-controller
+Group=cabinet-controller
+SupplementaryGroups=dialout
+ExecStartPre=+/usr/local/libexec/rpi-cabinet-controller/setup-rfcomm.sh /etc/rpi-cabinet-controller/controller.conf
+ExecStart=/usr/local/bin/rpi-cabinet-controller --config /etc/rpi-cabinet-controller/controller.conf
+Restart=on-failure
+RestartSec=3s
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=rpi-cabinet-controller
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target

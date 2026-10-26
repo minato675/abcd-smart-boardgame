@@ -1,0 +1,2818 @@
+{
+  "source": {
+    "archive": "S15P11A402-master.zip",
+    "repo": "abcd-smart-boardgame",
+    "sha": "5eef0ccc213f0f5dbefad1f582cb0bde1afcf9b6",
+    "branch": "master",
+    "namespace": "s15-webmobile3-sub1",
+    "id": "S15P11A402"
+  },
+  "kept": [
+    {
+      "path": ".gitignore",
+      "source_path": ".gitignore",
+      "bytes": 507,
+      "sha256": "8aecde299265f16e31b242c36923eb28b72dddaa84d543a12f8f36adaf1f6106",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/source/README.original.md",
+      "source_path": "README.md",
+      "bytes": 18423,
+      "sha256": "f141c7c32acef8b1013bd9f46bb289b04d0c6c5750876d9475687bc459f3b187",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/.env.example",
+      "source_path": "boardgame-frontend/.env.example",
+      "bytes": 2848,
+      "sha256": "b1056822c5ff8afdca116d7b88e89cddc8cbcfd22113115fb8054c4b5c68dd40",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/.env.production",
+      "source_path": "boardgame-frontend/.env.production",
+      "bytes": 1315,
+      "sha256": "9d5600ec96e9fbd4efff2a993ecefb77fecac37351b101a3c4eeb78625d8e154",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/.gitignore",
+      "source_path": "boardgame-frontend/.gitignore",
+      "bytes": 253,
+      "sha256": "fe718e7babb14f3cbad2d97f08889b9ce5215ed3fe0e43b2b8cfbfb3b9b844e8",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/.vscode/extensions.json",
+      "source_path": "boardgame-frontend/.vscode/extensions.json",
+      "bytes": 39,
+      "sha256": "70d56b550e796e3ea92922763ae03037a1a94596fda9d737982c75f6a20e88dd",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/Dockerfile",
+      "source_path": "boardgame-frontend/Dockerfile",
+      "bytes": 773,
+      "sha256": "f76f11e475f8faa599bf803129fbbbbd36135d8ef60848d2fdd58ce6a0d8e549",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/Jenkinsfile",
+      "source_path": "boardgame-frontend/Jenkinsfile",
+      "bytes": 2134,
+      "sha256": "18c9595eb07c48d200df9e75fe1c357d73dd9a1507eb1585d2cb1942d33794f2",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/README.md",
+      "source_path": "boardgame-frontend/README.md",
+      "bytes": 11108,
+      "sha256": "43fb15cc9648edf6c9582caea2b4ed9a1d98968db180474b2ff59d1266f123d5",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/index.html",
+      "source_path": "boardgame-frontend/index.html",
+      "bytes": 733,
+      "sha256": "cb3620f085861385ff7f8011b24d7535cb33e2871d76463f4b048a91593bbbd5",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/nginx.conf",
+      "source_path": "boardgame-frontend/nginx.conf",
+      "bytes": 670,
+      "sha256": "6dd5de6e4755f81057f304ac797a3c4536c0fb486f036fa3c6f5e72d2c995bc7",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/package-lock.json",
+      "source_path": "boardgame-frontend/package-lock.json",
+      "bytes": 99129,
+      "sha256": "c76bc523a9d6908118f9d28f4024c264a23c1b69e16f32fd2f6c214ae2360b3c",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/package.json",
+      "source_path": "boardgame-frontend/package.json",
+      "bytes": 567,
+      "sha256": "f30c738ae5f8384f8eb3511c9361ad48866431c28dcdbfdcd5e6586b4175be2b",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/public/favicon.svg",
+      "source_path": "boardgame-frontend/public/favicon.svg",
+      "bytes": 9522,
+      "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/public/icons.svg",
+      "source_path": "boardgame-frontend/public/icons.svg",
+      "bytes": 5031,
+      "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/App.vue",
+      "source_path": "boardgame-frontend/src/App.vue",
+      "bytes": 983,
+      "sha256": "85a895728d587c0466dc000cf794f3fc14552e119d06726b49123ffc24fbd669",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/cabinetMqtt.ts",
+      "source_path": "boardgame-frontend/src/admin/cabinetMqtt.ts",
+      "bytes": 6497,
+      "sha256": "b17839758ca46126cde6b66f245f3f1c2cc6ecd4e1549b593aeedcceecbbd018",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/BarChart.vue",
+      "source_path": "boardgame-frontend/src/admin/charts/BarChart.vue",
+      "bytes": 3737,
+      "sha256": "02cb0503570a674926fc0033bb98d9ebfa0b3790dbf4854e7f277a67211d61f1",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/ChartCard.vue",
+      "source_path": "boardgame-frontend/src/admin/charts/ChartCard.vue",
+      "bytes": 3710,
+      "sha256": "9653dd65aeb6c7d090e330e634991cbf0e41756f6aaf3523b32319ba31a4ffe6",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/ChartTooltip.vue",
+      "source_path": "boardgame-frontend/src/admin/charts/ChartTooltip.vue",
+      "bytes": 2142,
+      "sha256": "b87863fac0ee94ee1f71720b1ce30f8216f46e6c1f02cd1aefe26f5b122a15b1",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/ColumnChart.vue",
+      "source_path": "boardgame-frontend/src/admin/charts/ColumnChart.vue",
+      "bytes": 4721,
+      "sha256": "5cd6baf9fa4d7db5a9ee603b0bf41d45ba18feecbbf9aed17dd1e3c2de502d72",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/LineChart.vue",
+      "source_path": "boardgame-frontend/src/admin/charts/LineChart.vue",
+      "bytes": 7122,
+      "sha256": "c3aed610470a1205c032ba980026e7d3e46464f33144abd49f3adaf4c3409b0c",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/Sparkline.vue",
+      "source_path": "boardgame-frontend/src/admin/charts/Sparkline.vue",
+      "bytes": 1689,
+      "sha256": "5b5798a503d797bd0e4b1f5b19881dd5f89e125c4c12bf745f31ccae13909d4a",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/StackedBar.vue",
+      "source_path": "boardgame-frontend/src/admin/charts/StackedBar.vue",
+      "bytes": 4266,
+      "sha256": "ff6a6a0202930c79c60dcf9ed8a0e505fb9c544d1801836ca044b7d24c4cc68d",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/palette.ts",
+      "source_path": "boardgame-frontend/src/admin/charts/palette.ts",
+      "bytes": 3528,
+      "sha256": "bd781f2aee9c2ca3f603e85ea8fb0dfb5e6572e613f9917c2fdf53b5db10bbca",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/charts/useChartSize.ts",
+      "source_path": "boardgame-frontend/src/admin/charts/useChartSize.ts",
+      "bytes": 986,
+      "sha256": "2363511965b28e2caa5f29ea7888301391293b085ef430c0b1ce34adc11182d9",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/components/AdminShell.vue",
+      "source_path": "boardgame-frontend/src/admin/components/AdminShell.vue",
+      "bytes": 4561,
+      "sha256": "1034ea9494ef727282c48bfb7561611f905521165f247ba5420a32bae23df2a9",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/components/AdminSidebar.vue",
+      "source_path": "boardgame-frontend/src/admin/components/AdminSidebar.vue",
+      "bytes": 2523,
+      "sha256": "999de0cb78fae2fd699b28318abff7e6c6b9000bf76824c0903720de94efe85b",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/components/ConfirmDialog.vue",
+      "source_path": "boardgame-frontend/src/admin/components/ConfirmDialog.vue",
+      "bytes": 2711,
+      "sha256": "87e52d785e6a4b3ba4cad8bb3ca0a10892190b6f9e04aa14e42c6ce01d1be6b3",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/components/StatTile.vue",
+      "source_path": "boardgame-frontend/src/admin/components/StatTile.vue",
+      "bytes": 2828,
+      "sha256": "2bfd6a1882f0bd1e0160fe466c02f3090586b5c7b6075ec3ef214a706972bc8f",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/components/StatusPill.vue",
+      "source_path": "boardgame-frontend/src/admin/components/StatusPill.vue",
+      "bytes": 1349,
+      "sha256": "26308a8702f0c59c2dee82dd4bf7f448401f97eff339d7fea2b210b8d52c3029",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/demoData.ts",
+      "source_path": "boardgame-frontend/src/admin/demoData.ts",
+      "bytes": 24552,
+      "sha256": "ec5f18eb2872c492a58192ddda1b0bae9e39b0c28b66771858173ed0f874e2c1",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/format.ts",
+      "source_path": "boardgame-frontend/src/admin/format.ts",
+      "bytes": 2883,
+      "sha256": "9e0b71069d0d8f8dd51d25dc548469287445e71396e8eee7ee3dfbac126d8c99",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/stats.ts",
+      "source_path": "boardgame-frontend/src/admin/stats.ts",
+      "bytes": 13942,
+      "sha256": "6d2352b435b21a7ce551642f6b4242fdc267b74ad2027e01497685390d8109e8",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/store.ts",
+      "source_path": "boardgame-frontend/src/admin/store.ts",
+      "bytes": 13235,
+      "sha256": "0757ef47d645a734e7969dc072ae3b69a6e490708644b52914450d513a0abc7b",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/types.ts",
+      "source_path": "boardgame-frontend/src/admin/types.ts",
+      "bytes": 8310,
+      "sha256": "377a2c8a522a230a73427fd065e0c15d054d5247fd1a048343aa58e50e2474fd",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/views/AdminAiLogsView.vue",
+      "source_path": "boardgame-frontend/src/admin/views/AdminAiLogsView.vue",
+      "bytes": 8236,
+      "sha256": "6396877c18bd53137ba590c178d09a75c03b37dca90e0136ef0106d9380687aa",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/views/AdminCabinetsView.vue",
+      "source_path": "boardgame-frontend/src/admin/views/AdminCabinetsView.vue",
+      "bytes": 12115,
+      "sha256": "90964538cee620175ce42f7b0ca4866e2781b5018aaf224ae345e5e7d6737d10",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/views/AdminDashboardView.vue",
+      "source_path": "boardgame-frontend/src/admin/views/AdminDashboardView.vue",
+      "bytes": 14134,
+      "sha256": "86c37d8170cb13c652a1e682d60c25da53f3de2570c034e59fe5822f3f736e03",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/views/AdminRentsView.vue",
+      "source_path": "boardgame-frontend/src/admin/views/AdminRentsView.vue",
+      "bytes": 10958,
+      "sha256": "f13d16ffc1690307d38b83f5944586eaeff5cc7f47d54237c9c860791d82045e",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/admin/views/AdminRoomsView.vue",
+      "source_path": "boardgame-frontend/src/admin/views/AdminRoomsView.vue",
+      "bytes": 11900,
+      "sha256": "f4a8fb243958286c455e638a80ca221825d6d9665dda87c4f1958f587da76422",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/api/admin.ts",
+      "source_path": "boardgame-frontend/src/api/admin.ts",
+      "bytes": 823,
+      "sha256": "bcb35c9b5b56681c0b2e00cfb65aafe115cded1cb5c016b95368a46527acb957",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/api/dto.ts",
+      "source_path": "boardgame-frontend/src/api/dto.ts",
+      "bytes": 3820,
+      "sha256": "538835374bfbdb3103844365507ef7e8f6c44fe3770920e4bec4ea689cd0cfd3",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/api/games.ts",
+      "source_path": "boardgame-frontend/src/api/games.ts",
+      "bytes": 5285,
+      "sha256": "ea7be14d7469d632b29e02e9f7ecd9c0c29d24d28b24903805ec9c887e8bcbe1",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/api/http.ts",
+      "source_path": "boardgame-frontend/src/api/http.ts",
+      "bytes": 4978,
+      "sha256": "d0897560409beaf9cb987bc4c6fe3bb95c2839e9ae19141efcfa0ed725694e6e",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/api/mappers.ts",
+      "source_path": "boardgame-frontend/src/api/mappers.ts",
+      "bytes": 6247,
+      "sha256": "ceb45e6a0a74f8eb52dd7fc115744457c3c3a22e91400ec93227e97d264bee0c",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/api/mc.ts",
+      "source_path": "boardgame-frontend/src/api/mc.ts",
+      "bytes": 5481,
+      "sha256": "c5150f6ec4f54fd2e2ae09af1a0a5b78da934e5313d78298a3a008861de4b1b3",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/api/qna.ts",
+      "source_path": "boardgame-frontend/src/api/qna.ts",
+      "bytes": 984,
+      "sha256": "14215b5ca282251b9f904d995ccc1b000a3ae38375b595496f844f176d4572a0",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/assets/brand-mark.png",
+      "source_path": "boardgame-frontend/src/assets/brand-mark.png",
+      "bytes": 2430416,
+      "sha256": "697854609a327f0885e1c49d44607903cd524482063deed6d4fc765b8d56e2ba",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/assets/games/dixit.svg",
+      "source_path": "boardgame-frontend/src/assets/games/dixit.svg",
+      "bytes": 1372,
+      "sha256": "cebb95687e6b3b333eed19bf2b81df39755b6c67f7460f327893d0f49ed0da26",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/assets/games/halligalli.svg",
+      "source_path": "boardgame-frontend/src/assets/games/halligalli.svg",
+      "bytes": 1024,
+      "sha256": "34327c301eaf6d7a7749f8e78eaa43cba902852d73636b8d818006c0ac0c4c4b",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/assets/games/rummikub.svg",
+      "source_path": "boardgame-frontend/src/assets/games/rummikub.svg",
+      "bytes": 1134,
+      "sha256": "1202dac4901fb92dcf7033758ad3a2b92ff18dcf5a35ff2abfb9fe41fdd6120e",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/assets/games/stella.svg",
+      "source_path": "boardgame-frontend/src/assets/games/stella.svg",
+      "bytes": 1573,
+      "sha256": "e3e6b0a8538b7649ed59a30d5c4baa12c2d8a385c0d761668f5ee2e196402cd4",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/assets/hero.png",
+      "source_path": "boardgame-frontend/src/assets/hero.png",
+      "bytes": 13057,
+      "sha256": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/assets/vite.svg",
+      "source_path": "boardgame-frontend/src/assets/vite.svg",
+      "bytes": 8709,
+      "sha256": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/assets/vue.svg",
+      "source_path": "boardgame-frontend/src/assets/vue.svg",
+      "bytes": 496,
+      "sha256": "5532db34f1c52841881bab8aeca6c3e8d092bd21a689a65f4d8f8cf8041eef9d",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/common/AppIcon.vue",
+      "source_path": "boardgame-frontend/src/components/common/AppIcon.vue",
+      "bytes": 800,
+      "sha256": "52a2b92def5c5596fcceaf02dfcc9d2d8274f3ebac4e3c992073ccdb1d99f12c",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/common/BaseOverlay.vue",
+      "source_path": "boardgame-frontend/src/components/common/BaseOverlay.vue",
+      "bytes": 534,
+      "sha256": "5a39afc51935ed48b8aa36ec532d530cff76388c0d4ad7d9190c7d9a99140bb2",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/common/ToastMessage.vue",
+      "source_path": "boardgame-frontend/src/components/common/ToastMessage.vue",
+      "bytes": 882,
+      "sha256": "4043905fa3915cbadeb44424b86ef317ed3fec0bb53a4d1cf48f1e6ac72b8d52",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/common/icons.ts",
+      "source_path": "boardgame-frontend/src/components/common/icons.ts",
+      "bytes": 3704,
+      "sha256": "22d15d17801845ce11f71efe16bb783c978c67fd0cf40c0ac111add575b83068",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/AiRefereePanel.vue",
+      "source_path": "boardgame-frontend/src/components/game/AiRefereePanel.vue",
+      "bytes": 11215,
+      "sha256": "e1721a398ffef27a107e26b4f68cc6b3527d381147c33f7c444158576fcd0c7b",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/AiRefereePrompt.vue",
+      "source_path": "boardgame-frontend/src/components/game/AiRefereePrompt.vue",
+      "bytes": 4676,
+      "sha256": "181af6a569e34c079b834c78c04991799cdc22260285c02928a255b467181e5a",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/CabinetGuideModal.vue",
+      "source_path": "boardgame-frontend/src/components/game/CabinetGuideModal.vue",
+      "bytes": 3734,
+      "sha256": "514f973a453ec817e0c83804889dbec520d99ab6e91fe76dd591ebec4ec7030c",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/GameCard.vue",
+      "source_path": "boardgame-frontend/src/components/game/GameCard.vue",
+      "bytes": 5890,
+      "sha256": "cd9699d84838aa48a51c0ee68c332214d828bfa58d6377fb1d1b0444246d8dd3",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/GameFilterChips.vue",
+      "source_path": "boardgame-frontend/src/components/game/GameFilterChips.vue",
+      "bytes": 1700,
+      "sha256": "fc708f2ea8c24a8ea523a56bd0beb2b427ae5570236bfd683652a90d08beb643",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/GameSearchBar.vue",
+      "source_path": "boardgame-frontend/src/components/game/GameSearchBar.vue",
+      "bytes": 1124,
+      "sha256": "1b806b50e5ec5fb2818eda5b75db45e034120531fbeceded7a1e8940b2234d95",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/GameStateBadge.vue",
+      "source_path": "boardgame-frontend/src/components/game/GameStateBadge.vue",
+      "bytes": 858,
+      "sha256": "f85a8dec5ffe0439d2bde7d74956ee37e2e47bdf94e05c9b39f7836831b56f46",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/GameThumbnail.vue",
+      "source_path": "boardgame-frontend/src/components/game/GameThumbnail.vue",
+      "bytes": 1286,
+      "sha256": "daf23d3ace0f4a4cb7b04f063f708042ebd04ef118de7d4416ab71ef0a4376db",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/RoomStatusBar.vue",
+      "source_path": "boardgame-frontend/src/components/game/RoomStatusBar.vue",
+      "bytes": 3382,
+      "sha256": "049c0dfb8f288fa56ca6f36b55a9ff7a9beb7ec5930e888e709a391156a05bb9",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/TurnLogHistoryModal.vue",
+      "source_path": "boardgame-frontend/src/components/game/TurnLogHistoryModal.vue",
+      "bytes": 3119,
+      "sha256": "b2f06f94bc0fd9795f645ac1355237d70b6658ee40b9d5b0f5f8239c30e653d8",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/game/localThumbnails.ts",
+      "source_path": "boardgame-frontend/src/components/game/localThumbnails.ts",
+      "bytes": 1847,
+      "sha256": "9c8fc3ff82781ef71541d00aee8a0fa9768dfc8fdc12a8cf1d2a60c01881fb37",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/layout/AppHeader.vue",
+      "source_path": "boardgame-frontend/src/components/layout/AppHeader.vue",
+      "bytes": 2833,
+      "sha256": "79f67fbe4ea8c84a18341382fbd53e7153d34ff5bc87de412097c293eb385e3b",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/layout/TabletFrame.vue",
+      "source_path": "boardgame-frontend/src/components/layout/TabletFrame.vue",
+      "bytes": 524,
+      "sha256": "7dde3020b1379fa20d15783c040007e406f987eb23d28e54be669f5d45c6f278",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/reservation/CancelReservationModal.vue",
+      "source_path": "boardgame-frontend/src/components/reservation/CancelReservationModal.vue",
+      "bytes": 1355,
+      "sha256": "0930e42f86f2b450b20c0d1deeb27ed1d6beecc8b5cf5e06209207a0dc4b58d8",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/reservation/ReservationAlertOverlay.vue",
+      "source_path": "boardgame-frontend/src/components/reservation/ReservationAlertOverlay.vue",
+      "bytes": 2923,
+      "sha256": "ffbd5b4414c9593014bdff77b75d7fb3f816f0fbb84616fc9a19f67ca5d4f9d0",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/components/voice/RuleAssistantOverlay.vue",
+      "source_path": "boardgame-frontend/src/components/voice/RuleAssistantOverlay.vue",
+      "bytes": 5158,
+      "sha256": "69b805ccada7201e5d8ad1c434990afaa48bb43a7c59baa87cda06897199919d",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useAiReferee.ts",
+      "source_path": "boardgame-frontend/src/composables/useAiReferee.ts",
+      "bytes": 24422,
+      "sha256": "ef3bfb8e2bbe7052fc5103e8e8a244493853a54fc9e3b51e1aa274f255d7e736",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useGames.ts",
+      "source_path": "boardgame-frontend/src/composables/useGames.ts",
+      "bytes": 4154,
+      "sha256": "47b6d24f6b3fa34c81671e909224a43cb7b9dbae633d3ed9259e9293ed5ae430",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useNotificationSound.ts",
+      "source_path": "boardgame-frontend/src/composables/useNotificationSound.ts",
+      "bytes": 2590,
+      "sha256": "90f59be83381213388c05627867d35e34aecc7e185096f131c9792ae5dce8ac3",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useReservation.ts",
+      "source_path": "boardgame-frontend/src/composables/useReservation.ts",
+      "bytes": 8171,
+      "sha256": "3f13d6394b9314400e96f59afa8618ed098ce0e2ff026a319e48871909a13862",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useRoomRents.ts",
+      "source_path": "boardgame-frontend/src/composables/useRoomRents.ts",
+      "bytes": 2302,
+      "sha256": "350fb3b8af98d7b7b7465ab847e7d0d0f6bd0a484434eafb91d9175cd9160d9e",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useRoomSession.ts",
+      "source_path": "boardgame-frontend/src/composables/useRoomSession.ts",
+      "bytes": 2159,
+      "sha256": "4d5d5ff5fdb2355d9ea33243f004e067221b4e1ff2024b7b1480ee276ca22272",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useRuleAssistant.ts",
+      "source_path": "boardgame-frontend/src/composables/useRuleAssistant.ts",
+      "bytes": 6768,
+      "sha256": "266a2c87a2315a8a1e2219a9cef261fcdb23a5831a615549c378dffb3a4bc8f8",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useToast.ts",
+      "source_path": "boardgame-frontend/src/composables/useToast.ts",
+      "bytes": 718,
+      "sha256": "6125ea44bf4432f47c61f7bc7d53fbb967db12d9c71368feb22c950623a99e07",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/composables/useTts.ts",
+      "source_path": "boardgame-frontend/src/composables/useTts.ts",
+      "bytes": 3637,
+      "sha256": "112bd1698b1abe36dcf164ffaf7c2d17d9c0e0933e37a67968966c31299adf49",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/config/env.ts",
+      "source_path": "boardgame-frontend/src/config/env.ts",
+      "bytes": 4004,
+      "sha256": "ddec30b6877c1d66b4505dea0e1ee81134fc2250798ccca2b2226ff4252dbd45",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/env.d.ts",
+      "source_path": "boardgame-frontend/src/env.d.ts",
+      "bytes": 554,
+      "sha256": "bec78c87f5e8b2b5b6355370773d2b8582846a66ac369438861bfc44ee6f843b",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/main.ts",
+      "source_path": "boardgame-frontend/src/main.ts",
+      "bytes": 157,
+      "sha256": "0b52fc38e3837fc7fc6d8e658ac9ad839c63dbd10097f195877f24df0264fe94",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/mqtt/roomMqtt.ts",
+      "source_path": "boardgame-frontend/src/mqtt/roomMqtt.ts",
+      "bytes": 6207,
+      "sha256": "266baa536a7d51522399a747b5ffdc3cf77926a08221250a2a24a18bbee601e7",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/nginx.conf",
+      "source_path": "boardgame-frontend/src/nginx.conf",
+      "bytes": 457,
+      "sha256": "d8dff70407428c386822f0a14404e2c7c6f854cda5e9e55680993ac0783425ba",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/router/index.ts",
+      "source_path": "boardgame-frontend/src/router/index.ts",
+      "bytes": 1665,
+      "sha256": "9e2a47b4623baa11941a5d5cf6d3cbd3190af2812dd21275625884f3530fdefc",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/style.css",
+      "source_path": "boardgame-frontend/src/style.css",
+      "bytes": 6137,
+      "sha256": "25ce79af582f6f8a2c9b9e7ca41a77843a0b41a21685044b753df3c949db0372",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/types/game.ts",
+      "source_path": "boardgame-frontend/src/types/game.ts",
+      "bytes": 10457,
+      "sha256": "731efe26a710f1aa28b612e2831413871ca01fa05b69615cd372fc59bfa1fd07",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/views/GameDetailView.vue",
+      "source_path": "boardgame-frontend/src/views/GameDetailView.vue",
+      "bytes": 15699,
+      "sha256": "3b4e4d044eecc34ad406e38a94e7433ac0f28dce7fba77e0c7c316db82b4b318",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/src/views/GameListView.vue",
+      "source_path": "boardgame-frontend/src/views/GameListView.vue",
+      "bytes": 18873,
+      "sha256": "622ae3b5350a01cd2ff9e015a9cbec5aef6c4c117086c29bf3e203fce2cf805e",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/tsconfig.app.json",
+      "source_path": "boardgame-frontend/tsconfig.app.json",
+      "bytes": 478,
+      "sha256": "2582fd1eb8266b331a4b28ab9e23d752c394439c70eb21bcbc76ffe1039fe45e",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/tsconfig.json",
+      "source_path": "boardgame-frontend/tsconfig.json",
+      "bytes": 119,
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/tsconfig.node.json",
+      "source_path": "boardgame-frontend/tsconfig.node.json",
+      "bytes": 558,
+      "sha256": "d366cc0827139db39c61815f22491bbfda56c654354a42ad7795143d314e45e8",
+      "mode": "100644"
+    },
+    {
+      "path": "boardgame-frontend/vite.config.ts",
+      "source_path": "boardgame-frontend/vite.config.ts",
+      "bytes": 1278,
+      "sha256": "95a366098d223f382e84cbea67fa102f1032c0b1ca17e1ac7d7a10341f4245e4",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/README.md",
+      "source_path": "cabinet/README.md",
+      "bytes": 1442,
+      "sha256": "4dcb33842cf3a52c6d814338472042313614c50ff9e901c3896a4831019be5b3",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/.gitignore",
+      "source_path": "cabinet/controller/.gitignore",
+      "bytes": 183,
+      "sha256": "6cf67880f211ee105020fe31becb3ec11a6d120e892e65b8b34fa99918924114",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/CMakeLists.txt",
+      "source_path": "cabinet/controller/CMakeLists.txt",
+      "bytes": 4452,
+      "sha256": "bdf35b7c6cdd735d77d2ec71a328f73bf01b2ad57c8b647eac3905ff80208ab9",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/README.md",
+      "source_path": "cabinet/controller/README.md",
+      "bytes": 6514,
+      "sha256": "c68351367e7b567565ae60a1835b8c9f02387e7a7c1055c91df2dc21f7f44de8",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/config/controller.conf.example",
+      "source_path": "cabinet/controller/config/controller.conf.example",
+      "bytes": 781,
+      "sha256": "e5352d781540cfcb867a4878a0897236febde9b232416bb89a092b8e4ebe8bda",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/docs/protocol.md",
+      "source_path": "cabinet/controller/docs/protocol.md",
+      "bytes": 3752,
+      "sha256": "660c388d439b89ca0c6659157c00f73d8051981fe088103ca307df1d098de50a",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/scripts/install.sh",
+      "source_path": "cabinet/controller/scripts/install.sh",
+      "bytes": 2146,
+      "sha256": "6130cb228f2bac49c355ee9fa6dcd05d999f65a16b3311f19f424ba763672176",
+      "mode": "100755"
+    },
+    {
+      "path": "cabinet/controller/scripts/setup-rfcomm.sh",
+      "source_path": "cabinet/controller/scripts/setup-rfcomm.sh",
+      "bytes": 2297,
+      "sha256": "23dd71759c78692a2c7e096248f2c8ebc92e74675cafe8bb827942226cd835f9",
+      "mode": "100755"
+    },
+    {
+      "path": "cabinet/controller/src/config.cpp",
+      "source_path": "cabinet/controller/src/config.cpp",
+      "bytes": 6915,
+      "sha256": "38d4ed3033c9db9422454e28fe159f88078e86c6e6e8a1dd48a95c6784387498",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/config.hpp",
+      "source_path": "cabinet/controller/src/config.hpp",
+      "bytes": 798,
+      "sha256": "2ac4440ea2b46de8ab056a08d40d53fb5f234702a345ee067fa07a9a653d49b2",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/controller.cpp",
+      "source_path": "cabinet/controller/src/controller.cpp",
+      "bytes": 15510,
+      "sha256": "a0ff16f49db1388a695f8919fd0fd0e659de7b76ae82e626662656e9501b28e7",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/controller.hpp",
+      "source_path": "cabinet/controller/src/controller.hpp",
+      "bytes": 3195,
+      "sha256": "fc6a922c6d51d8128ccf70e46373d2da753bb1ac37d05e4f657b84265cdf305c",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/main.cpp",
+      "source_path": "cabinet/controller/src/main.cpp",
+      "bytes": 11192,
+      "sha256": "e18fe874691c809165f340fbd96d8210a4bdc8d011dd2811604bbc11bf9d2560",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/mqtt_client.cpp",
+      "source_path": "cabinet/controller/src/mqtt_client.cpp",
+      "bytes": 4893,
+      "sha256": "ea5a144721fe4dec6873885f66332376888268e6b582affebf17341aaa4b0dfe",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/mqtt_client.hpp",
+      "source_path": "cabinet/controller/src/mqtt_client.hpp",
+      "bytes": 1696,
+      "sha256": "294f2f1364adbef0cbe5895ee4119c2b4c724364ae68460f9a135c7c9b9b4c54",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/protocol.cpp",
+      "source_path": "cabinet/controller/src/protocol.cpp",
+      "bytes": 9917,
+      "sha256": "9a0eff9b19d83ae6826dde9a66ce6e43f548ddc8546ef565df2b22978a152a60",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/protocol.hpp",
+      "source_path": "cabinet/controller/src/protocol.hpp",
+      "bytes": 1908,
+      "sha256": "60fca96dd1bd009333fd7aadfc1acf051a220864a031dfac16e5b8288f514ad1",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/serial_line.cpp",
+      "source_path": "cabinet/controller/src/serial_line.cpp",
+      "bytes": 6454,
+      "sha256": "58049e2af0b68b0eb322bbddec87b18764e541689cc0368300455437536ae84e",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/src/serial_line.hpp",
+      "source_path": "cabinet/controller/src/serial_line.hpp",
+      "bytes": 1288,
+      "sha256": "1f5cc9dc89baa9f6d43d25895d400af118f52708be9ff09b9f52515d385dee30",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/systemd/rpi-cabinet-controller.service",
+      "source_path": "cabinet/controller/systemd/rpi-cabinet-controller.service",
+      "bytes": 832,
+      "sha256": "33a3803d1e0721cfcb9ebba00d5cd653527488669d3d80e225c7d695b2ac6eaa",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/systemd/rpi-cabinet-controller.sysusers",
+      "source_path": "cabinet/controller/systemd/rpi-cabinet-controller.sysusers",
+      "bytes": 62,
+      "sha256": "e35e09f5d5b47c8514b696b06798d8611b632a5fbab7f667ee8ece50adcb9142",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/tests/.gitkeep",
+      "source_path": "cabinet/controller/tests/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/tests/config_test.cpp",
+      "source_path": "cabinet/controller/tests/config_test.cpp",
+      "bytes": 3038,
+      "sha256": "076d9d3c81bdbd11c37a35f7017a39174348f5014670e7426fcf665c51a48b3d",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/tests/controller_integration_test.py",
+      "source_path": "cabinet/controller/tests/controller_integration_test.py",
+      "bytes": 12371,
+      "sha256": "5520f4a21f30fb60ace4707a81f9deb8a27f9f76844f560ccffccbbc564dc137",
+      "mode": "100755"
+    },
+    {
+      "path": "cabinet/controller/tests/controller_test.cpp",
+      "source_path": "cabinet/controller/tests/controller_test.cpp",
+      "bytes": 14873,
+      "sha256": "4bc0c835e714ff734c50e7187aac807f1c7cd24b11e05bd8b17e40752382f0ff",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/tests/mqtt_client_test.cpp",
+      "source_path": "cabinet/controller/tests/mqtt_client_test.cpp",
+      "bytes": 4374,
+      "sha256": "2c348a32c69ec4f1ed6b957d277a25f8d4f098bbb93845cef9186235bab9d8fd",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/tests/protocol_test.cpp",
+      "source_path": "cabinet/controller/tests/protocol_test.cpp",
+      "bytes": 4273,
+      "sha256": "f33ee8cd9383f207032745d70e89d3eadeaf7aa16a947d1c8313ccd21bea38d9",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/tests/serial_line_test.cpp",
+      "source_path": "cabinet/controller/tests/serial_line_test.cpp",
+      "bytes": 3183,
+      "sha256": "3f91c75487866588eedf80a86e3b836cc95ea1252a75d935d65a3d174626c1b1",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/tools/mock-server/README.md",
+      "source_path": "cabinet/controller/tools/mock-server/README.md",
+      "bytes": 895,
+      "sha256": "d0211b301f1cdcfe93b20ff6d10ec516862dd5cf1df7df4bee2f8d032573d2d2",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/tools/mock-server/mock_server.py",
+      "source_path": "cabinet/controller/tools/mock-server/mock_server.py",
+      "bytes": 9398,
+      "sha256": "092acba1e9bafa129086f6c56ace9da27757d30a4405d4f5f42f151d3039655e",
+      "mode": "100755"
+    },
+    {
+      "path": "cabinet/controller/tools/mock-server/test_mock_server.py",
+      "source_path": "cabinet/controller/tools/mock-server/test_mock_server.py",
+      "bytes": 3403,
+      "sha256": "3e7a612cbd2aeb17b8fe82a84830ca961b74d85858ab68a04c4162ef12926fbe",
+      "mode": "100755"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/.gitignore",
+      "source_path": "cabinet/controller/utils/cr100emur/.gitignore",
+      "bytes": 78,
+      "sha256": "8aeddebed9ff78f49cc4b0be775a943a28d66636a38bff954bcdb24290170375",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/LICENSE",
+      "source_path": "cabinet/controller/utils/cr100emur/LICENSE",
+      "bytes": 1091,
+      "sha256": "c1f370cdbec88dcde2e58ce1e2a816c7de67f3596c785ed9da05fb508112eeae",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/Makefile",
+      "source_path": "cabinet/controller/utils/cr100emur/Makefile",
+      "bytes": 4677,
+      "sha256": "69463dd45ddc3493710b12565346cde7a974f26e7189d2c29818668fa0e4b103",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/README.md",
+      "source_path": "cabinet/controller/utils/cr100emur/README.md",
+      "bytes": 7772,
+      "sha256": "322a9a0136f5b98c66314916d5f602f2c038112f0c710b42450a18fca7fc18f4",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/docs/cpp-sdk.md",
+      "source_path": "cabinet/controller/utils/cr100emur/docs/cpp-sdk.md",
+      "bytes": 2663,
+      "sha256": "ec0b440f29bfb59d818244accc1119ab3a391d150bb2e3679f7c5eba423f39c8",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/docs/event-driven.md",
+      "source_path": "cabinet/controller/utils/cr100emur/docs/event-driven.md",
+      "bytes": 2896,
+      "sha256": "81ad8075a2c51a2609522133eea46c6ce23c6602b77bd8c46b742ae9ad7e532e",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/docs/hardware-validation.md",
+      "source_path": "cabinet/controller/utils/cr100emur/docs/hardware-validation.md",
+      "bytes": 2103,
+      "sha256": "2c44d85883a2302827d57f8fa8f7ddf84826e888b7a2757a5fb82d97766c4b79",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/docs/protocol.md",
+      "source_path": "cabinet/controller/utils/cr100emur/docs/protocol.md",
+      "bytes": 3085,
+      "sha256": "ed1f83171ee841b0a0df088f1d42b9ce231010d6e14224247f416a9dcca531bf",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/docs/python-sdk.md",
+      "source_path": "cabinet/controller/utils/cr100emur/docs/python-sdk.md",
+      "bytes": 3276,
+      "sha256": "ea835056a2f4395f6ca64b174d6a25286c45cf203e16ace22a89c3faabdb8013",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/examples/read_async.py",
+      "source_path": "cabinet/controller/utils/cr100emur/examples/read_async.py",
+      "bytes": 326,
+      "sha256": "d34c59f23aa71ef0ea41d1be4a214602f67c21c42c712a890f6341705fb99861",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/examples/read_events.c",
+      "source_path": "cabinet/controller/utils/cr100emur/examples/read_events.c",
+      "bytes": 1173,
+      "sha256": "b244312cbe070ee37d1e579d31f26dc22967b4bde161bb80307c7045070f39d1",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/examples/read_events.cpp",
+      "source_path": "cabinet/controller/utils/cr100emur/examples/read_events.cpp",
+      "bytes": 1442,
+      "sha256": "eff16e455d20640d455c53b5b4f8e299a1e37ecdc165a7511f8219b8ac8d64af",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/examples/read_once.c",
+      "source_path": "cabinet/controller/utils/cr100emur/examples/read_once.c",
+      "bytes": 601,
+      "sha256": "c2a93348182d409e9395fd4fd0f6dc6d717c5931b281b9a483d701a6614c609d",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/examples/read_once.cpp",
+      "source_path": "cabinet/controller/utils/cr100emur/examples/read_once.cpp",
+      "bytes": 363,
+      "sha256": "1e652c81c7d8fae0786ea69ddfd2705aeb77f2dc15d0515dd0d42747eb2db11f",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/examples/read_once.py",
+      "source_path": "cabinet/controller/utils/cr100emur/examples/read_once.py",
+      "bytes": 154,
+      "sha256": "31ff0d72d4b2b3b24fc34a5eaf32f068083588f2184d665a7b47d2ff73326fa8",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/include/cr100emur.h",
+      "source_path": "cabinet/controller/utils/cr100emur/include/cr100emur.h",
+      "bytes": 4509,
+      "sha256": "087a77ead5de41f12528263bb7637373fdb5e1340e0f00738279fc2841535b5c",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/include/cr100emur.hpp",
+      "source_path": "cabinet/controller/utils/cr100emur/include/cr100emur.hpp",
+      "bytes": 14759,
+      "sha256": "4fbad24aefccb6ae5334f15f70d44292e28003b69c4675901b15d65c0f8b0135",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/pyproject.toml",
+      "source_path": "cabinet/controller/utils/cr100emur/pyproject.toml",
+      "bytes": 906,
+      "sha256": "cbbcceea5e0926fccb1f687def6d0f7f87d91cd817e34bbede71c6ed609d8bb2",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/__init__.py",
+      "source_path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/__init__.py",
+      "bytes": 680,
+      "sha256": "29fdb307efd114288bf96054170c72bc9822abfa7a9035ee758f15413fb1c64b",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/__main__.py",
+      "source_path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/__main__.py",
+      "bytes": 50,
+      "sha256": "e014c07c71c5daede3fe8520fd696eaaed07cb19d77c01c14147273d0f9ed71b",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/_native.py",
+      "source_path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/_native.py",
+      "bytes": 3704,
+      "sha256": "239f0e51cd5834a4212ead1ada2b1bcf152a23995330000dd9022ff92df1d8b2",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/cli.py",
+      "source_path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/cli.py",
+      "bytes": 2478,
+      "sha256": "03a55dfff419bb8c5bc796be06847b442f5f03823183bea0c498400ed278eb7d",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/py.typed",
+      "source_path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/py.typed",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/sdk.py",
+      "source_path": "cabinet/controller/utils/cr100emur/python/src/cr100emur/sdk.py",
+      "bytes": 14194,
+      "sha256": "c981d8ea09bfc7f5643996c8fc07a8a69f12e164cfc09df7a1dfe8ce0a948584",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/python/tests/test_sdk.py",
+      "source_path": "cabinet/controller/utils/cr100emur/python/tests/test_sdk.py",
+      "bytes": 5427,
+      "sha256": "3e596bb5e512172cafa79a435c1fd7e5d5f29fd590b2fff194aafba7ffb427b3",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/src/cr100-dump.c",
+      "source_path": "cabinet/controller/utils/cr100emur/src/cr100-dump.c",
+      "bytes": 5564,
+      "sha256": "e1e29af2317abadf9f069dd285162052e5e2b8b406392e575adbded08cdc6aad",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/src/cr100-read.c",
+      "source_path": "cabinet/controller/utils/cr100emur/src/cr100-read.c",
+      "bytes": 7271,
+      "sha256": "5b35589d5ff0370cb377ebf8279c20c096610aaa460d98dedf42d717e324e76e",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/src/cr100emur.c",
+      "source_path": "cabinet/controller/utils/cr100emur/src/cr100emur.c",
+      "bytes": 15947,
+      "sha256": "a4d2ee87706d79e7bd2951ffd8e08b302b32a237af6bfe96aac3f7264e90a767",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/tests/test_cpp.cpp",
+      "source_path": "cabinet/controller/utils/cr100emur/tests/test_cpp.cpp",
+      "bytes": 6079,
+      "sha256": "0d8a20077ea44895f573875e73a5abc76758b683fee74f8530377a9b286abe1e",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/tests/test_parser.c",
+      "source_path": "cabinet/controller/utils/cr100emur/tests/test_parser.c",
+      "bytes": 4560,
+      "sha256": "f2bd2fef4b159d31737e1bde76e3f764d1eba12e99cb5052920ba37c400254b1",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/tests/test_reader.c",
+      "source_path": "cabinet/controller/utils/cr100emur/tests/test_reader.c",
+      "bytes": 4660,
+      "sha256": "e859f6b2669b16d345e7df4b51a863b336bd0581cb3e90ee13c99cfa78516650",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/controller/utils/cr100emur/udev/70-cr100emur.rules",
+      "source_path": "cabinet/controller/utils/cr100emur/udev/70-cr100emur.rules",
+      "bytes": 465,
+      "sha256": "e626046e333a25eff291f17022b10e740f239f5ced0498a1bf3430bee38e64f3",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/unit/README.md",
+      "source_path": "cabinet/unit/README.md",
+      "bytes": 2738,
+      "sha256": "9966a1dbb11799964cb1b24df9c2c887c2b27abbf44ae5d39de32e7811163291",
+      "mode": "100644"
+    },
+    {
+      "path": "cabinet/unit/main.ino",
+      "source_path": "cabinet/unit/main.ino",
+      "bytes": 11607,
+      "sha256": "ba21aa69f3e3476f59e015e672d963556e013087ac0861d08c17d3cb9496027e",
+      "mode": "100644"
+    },
+    {
+      "path": "exec/.gitkeep",
+      "source_path": "exec/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644"
+    },
+    {
+      "path": "exec/boardgame_20260809.dump",
+      "source_path": "exec/boardgame_20260809.dump",
+      "bytes": 39280,
+      "sha256": "31fbc9fc7d1e8ead8220cc47d97f14069d38a7a680ef2b6e5da79fd33b12f026",
+      "mode": "100644"
+    },
+    {
+      "path": "exec/db_init.sql",
+      "source_path": "exec/db_init.sql",
+      "bytes": 14310,
+      "sha256": "366860afb0ad7ae8f2b5cb0ff65f63e58955bb24b37024f64e5355f308192587",
+      "mode": "100644"
+    },
+    {
+      "path": "exec/docker-compose.yml",
+      "source_path": "exec/docker-compose.yml",
+      "bytes": 2886,
+      "sha256": "634434c22d95e2bc56ee0b7c40eb3362b518445d7c4f47f705ff99a456452a5b",
+      "mode": "100644"
+    },
+    {
+      "path": "exec/nginx.conf",
+      "source_path": "exec/nginx.conf",
+      "bytes": 1156,
+      "sha256": "08f138ad969b69cf2e349bbe9cc3546c6a3f1914220559cee3fb4bdf0cf01f69",
+      "mode": "100644"
+    },
+    {
+      "path": "exec/포팅 매뉴얼.md",
+      "source_path": "exec/포팅 매뉴얼.md",
+      "bytes": 4243,
+      "sha256": "c284cc4fdc748c67e228a7c350cbde588d568da12e177be31cb30a8a4fdfa09f",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/.gitattributes",
+      "source_path": "inte-server/.gitattributes",
+      "bytes": 54,
+      "sha256": "193fbf6c445dea576a6f238c5262320931945a2ea03bae24b161b30856919a09",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/.gitignore",
+      "source_path": "inte-server/.gitignore",
+      "bytes": 444,
+      "sha256": "795029e58e368bb91c71cb3adb971491562622d4b1684604f278cdbfb8fec238",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/Dockerfile",
+      "source_path": "inte-server/Dockerfile",
+      "bytes": 146,
+      "sha256": "4ac2d88717fe6a5e1051103fc0a5de7355f485473ff11308675fc142931ca08c",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/Jenkinsfile",
+      "source_path": "inte-server/Jenkinsfile",
+      "bytes": 4365,
+      "sha256": "b54a72b24a573c1b4a4257e745293d169e4ba65eb2952ef4eea7b4d68d23bd23",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/build.gradle",
+      "source_path": "inte-server/build.gradle",
+      "bytes": 1579,
+      "sha256": "795cb505e57dd8325f08205dc22eddd0c4543b0df1121016777c61d974b2744a",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/gradle/wrapper/gradle-wrapper.jar",
+      "source_path": "inte-server/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 48462,
+      "sha256": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/gradle/wrapper/gradle-wrapper.properties",
+      "source_path": "inte-server/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 281,
+      "sha256": "e0846bd420bf1543f500e0c9b35c01d84611b0f1afe01e24a82d0eca53c33ccb",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/gradlew",
+      "source_path": "inte-server/gradlew",
+      "bytes": 8654,
+      "sha256": "ab5c0cad16305af2e619c159c1f58dd68d07fab9c11e36701e109c0277407f7a",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/gradlew.bat",
+      "source_path": "inte-server/gradlew.bat",
+      "bytes": 2846,
+      "sha256": "475c4f08cd57cf2faa819e7f36d72aa93f0ad646ea23a8f7fa3ef54dee1cbc52",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/settings.gradle",
+      "source_path": "inte-server/settings.gradle",
+      "bytes": 31,
+      "sha256": "02a1eeeb0516f9bd92e0728dbddd17776e7aeee020eff204ed1505a982cd1779",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/BoardgameApplication.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/BoardgameApplication.java",
+      "bytes": 318,
+      "sha256": "fc4731ff401dd2b71cd3794b25f6c83f3162caaa541593e43bc4077110f6d6d4",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/common/BusinessException.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/common/BusinessException.java",
+      "bytes": 583,
+      "sha256": "d78cf9f16518c72eb056afa229b27876478694ec5f965db1f6d534a59ce64a87",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/common/ErrorCode.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/common/ErrorCode.java",
+      "bytes": 2782,
+      "sha256": "d234538544cfc00d1580db9d1de55c0eb39ff4fa2312c6e7f4b3abd593a870b5",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/common/ErrorResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/common/ErrorResponse.java",
+      "bytes": 1064,
+      "sha256": "f18a251adbf130ee3701f08a6d4d64cf01dc0e91c09dd8d560b1771ad27a0c46",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/common/GlobalExceptionHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/common/GlobalExceptionHandler.java",
+      "bytes": 3288,
+      "sha256": "fafdaee454d78d8191ed0d6169ab9a141a5a1c2e8546ddabbfd7bb7afa6eed14",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/config/CachedBodyHttpServletRequest.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/config/CachedBodyHttpServletRequest.java",
+      "bytes": 2718,
+      "sha256": "789228b3cdd54ec208671a44eb2bb88fbe0032b2d1914aae2165e2a61a12b6c4",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/config/RequestLoggingFilter.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/config/RequestLoggingFilter.java",
+      "bytes": 8886,
+      "sha256": "385b9dcab3fe532a2fb0aa4927b0aa34b3541374e8ffd38d49e06a1a6a580292",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/config/SchedulerConfig.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/config/SchedulerConfig.java",
+      "bytes": 1230,
+      "sha256": "7499659b395da69565a49bebf09644f0fd2097e39eb6c7da8c4c761cea16e582",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/config/SwaggerConfig.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/config/SwaggerConfig.java",
+      "bytes": 2304,
+      "sha256": "7f07617d1a34ec48c0b7544f973a9c25cdb8caa209f83a6744a16b47876c42f7",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/AdminController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/AdminController.java",
+      "bytes": 5640,
+      "sha256": "c032194c5611d69898caa1ace33449e701679bfcb8065b867e1e41affd76a25a",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/BoardGameController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/BoardGameController.java",
+      "bytes": 2516,
+      "sha256": "101f20be9b13ff913c377d579cbe4f6b5b62557454e1fa355d08c9704c17a016",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/DbTestController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/DbTestController.java",
+      "bytes": 978,
+      "sha256": "f02631e495d7a4192b6297dc392eff08b88dc1c509de1ff43b8c7ba4c85c6ca5",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/HealthController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/HealthController.java",
+      "bytes": 622,
+      "sha256": "05d5352019be8f79830c9beaa0d5a2c5355c7334c5beac7d628ee08a8c312678",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/McController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/McController.java",
+      "bytes": 8358,
+      "sha256": "715190bd596d7e62d048bd708337025567e647927f5210e8bd90cec85ad23ceb",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/MqttTestController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/MqttTestController.java",
+      "bytes": 1709,
+      "sha256": "1ac1593cef6a10e9b8a058b8b4821c79dc37193fae1b4c1898bb41556959a02f",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/QnaController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/QnaController.java",
+      "bytes": 1758,
+      "sha256": "1cac03caccebe0824e5926bd78ef44c91053625323c5a6632340fbb242163121",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/RentController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/RentController.java",
+      "bytes": 3557,
+      "sha256": "72080170907d598586c1c49bd0f6becb05c7de36451d2ddc944cddf8dfd2d47b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/controller/ReservationController.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/controller/ReservationController.java",
+      "bytes": 4607,
+      "sha256": "b1fd4d3649999a0c75cce69272ca73c5ffcdcfa79a2384a180e8f90075294ce0",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ActiveRent.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ActiveRent.java",
+      "bytes": 665,
+      "sha256": "3756459bb4ccdcb0784ef075dff03f188e6f811a4197de98f35305fe994f6fc4",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ActiveRentResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ActiveRentResponse.java",
+      "bytes": 1091,
+      "sha256": "9c9ce6dec6449159ca5a3c4d1d88196d0d563cd302e77df5f31265e70ea8413b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameCreateRequest.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameCreateRequest.java",
+      "bytes": 2806,
+      "sha256": "c3031c215fcde573f515984e03943a1655cbb12359413562a1a5a7f4a32c51b2",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameDetailResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameDetailResponse.java",
+      "bytes": 822,
+      "sha256": "b769d71808da99e18d426725a89cdda305b5667a9dff8bd1b0496f67c1919884",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameItem.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameItem.java",
+      "bytes": 347,
+      "sha256": "c5cba252a15484060b4b428f90babd7b7bc45d7537c1da1519c553788d5cb565",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameListResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameListResponse.java",
+      "bytes": 736,
+      "sha256": "88b6cfaa4798331fe7ddab9232c9ce8bfe457b352bf86a1b4b9ec239d16f20e4",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameSearchCondition.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/BoardGameSearchCondition.java",
+      "bytes": 1075,
+      "sha256": "2049de0f568445e8cdc119828d501cd051e2b8f30d574e8102f14b27866e6701",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/CabinetHistory.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/CabinetHistory.java",
+      "bytes": 231,
+      "sha256": "396f97e21dfdb85228daf377056da1873aaa4a0ceb036042422965cb7a3a075c",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/CabinetOpenTarget.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/CabinetOpenTarget.java",
+      "bytes": 700,
+      "sha256": "142a345fe6985e32e414f2f22f1900816aa0e5691c305f3cfd1eaa5dd3b253e5",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/CategoryResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/CategoryResponse.java",
+      "bytes": 236,
+      "sha256": "98cfd9578258f8a50b381af4e2ea27a7fe653485b223e8a0192d327b83f80425",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McSessionResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McSessionResponse.java",
+      "bytes": 1646,
+      "sha256": "44e97d9f84773f63dab28666854e8bbf230871e5be94942eaeb33641c4a95889",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McStartResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McStartResponse.java",
+      "bytes": 1363,
+      "sha256": "2b7d8fdd5277dfb1d2752e128f0d9fe36380f75ee1e2f772f76b26802bf58a90",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McTurnLog.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McTurnLog.java",
+      "bytes": 754,
+      "sha256": "e4c31c26cca9f4c5d96456bd85696cedc0bdf40e10a94e1d149f2440083fb422",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McTurnLogResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McTurnLogResponse.java",
+      "bytes": 1143,
+      "sha256": "628034c49b0ed81d1468c4e7b782f4bba666c713fec7251a8b8b4732d3218c24",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McTurnResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McTurnResponse.java",
+      "bytes": 1231,
+      "sha256": "a4124d0bbe9ad0d174f98031cc1f7ea4c999854cf3870d93e3d742d359819b7e",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McViolationLog.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/McViolationLog.java",
+      "bytes": 746,
+      "sha256": "67ea0e2c71513291eacadf99439e4996cf5c359f2316ca131aaedd456be0bb9d",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/QnaLog.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/QnaLog.java",
+      "bytes": 801,
+      "sha256": "ade982bdacc4ae2a6947f86b171172b5969c0dfff9fdfbb92906262897236706",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/QnaStartRequest.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/QnaStartRequest.java",
+      "bytes": 885,
+      "sha256": "6bfdf6d8690b4e2cb24f73fb14fd3c8e1f80d77664d47ba7e99a0f2b19603e96",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/QnaStartResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/QnaStartResponse.java",
+      "bytes": 850,
+      "sha256": "a857699237b594a1597f24d07a0d80b55b550a341d4daca002313e3b65b892b6",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RentRequest.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RentRequest.java",
+      "bytes": 935,
+      "sha256": "5da424a33975705a6d992ee933927ac25f3ea63b8b66f030e5d5004e162925a1",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RentResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RentResponse.java",
+      "bytes": 1006,
+      "sha256": "274344cfe6407c1e5143f140060472bdeef3a245bb6391fde98e2cc6ddde9f7f",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ReservationCancelRequest.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ReservationCancelRequest.java",
+      "bytes": 1215,
+      "sha256": "0d975e3a609176fee5d5d918b8b8af8dd83f2e3b9791971ff93184e7216009f8",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ReservationRequest.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ReservationRequest.java",
+      "bytes": 942,
+      "sha256": "32d26afd811d6115e31832d8441b6d57e8b8a73275a699f6d0274f2768c1931b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ReservationResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/ReservationResponse.java",
+      "bytes": 669,
+      "sha256": "d5fe861e249584c21c3258db080e5fa7f9cc56000de2625a845b9e4b0d01ad52",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RoomRequest.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RoomRequest.java",
+      "bytes": 1225,
+      "sha256": "968e23d618718371bc2a5bb5d5bb9bd9d2ccca1779f9a6d71148d089acd2d500",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RoomResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RoomResponse.java",
+      "bytes": 201,
+      "sha256": "75296a8c87e086a27ef56513db0726e2ae037a601ca1d56dedfef47b00cc34ea",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RoomUsageRequest.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RoomUsageRequest.java",
+      "bytes": 854,
+      "sha256": "c966f53cc81b3fde9463a94cbdb3cc6eda8aba81b4e8f60ce74a6c0388a86de9",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RoomUsageResponse.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/dto/RoomUsageResponse.java",
+      "bytes": 635,
+      "sha256": "b07f6ba06ec2009a9ab74117848eabfdee9bd0be3b0bed6b2d66bfe574e893a3",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/BoardGameItemMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/BoardGameItemMapper.java",
+      "bytes": 1029,
+      "sha256": "acf824fffd88e2cea97bc74787089dec1ab51bc39e0d696ca32a55b3fc6aff76",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/BoardGameMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/BoardGameMapper.java",
+      "bytes": 1259,
+      "sha256": "f4a6373ddb3c26dd278b994e3fa694e38d116df4584dffc8f418746650fee573",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/CabinetMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/CabinetMapper.java",
+      "bytes": 3687,
+      "sha256": "1f32b89d7fa3dfcbe56a73a8c621d153dbe39f8d5c11c49bcd1ad158afe5f1de",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/McTurnLogMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/McTurnLogMapper.java",
+      "bytes": 971,
+      "sha256": "9e7b18767f3a807311bf72c2c70560cb00d5814a1043bb0ad0801a5d7b15ca90",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/McViolationLogMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/McViolationLogMapper.java",
+      "bytes": 552,
+      "sha256": "dabbc8abb2d9c1a0224e75e7386ae7899ce58dd5d2f942d58fd081bdc66cae4c",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/QnaLogMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/QnaLogMapper.java",
+      "bytes": 278,
+      "sha256": "b4c145fae405dfe8f7295e96c465f6fdc35a6aefd8c045af1a54378d4ed53025",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/RentMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/RentMapper.java",
+      "bytes": 4158,
+      "sha256": "9c6ae40bd64e0baae472b4dd32c0ebd70fb0f9659c8076b5ccb8c701ab3985dd",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/ReservationMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/ReservationMapper.java",
+      "bytes": 1853,
+      "sha256": "1919a5c19f188d36cdddce942422c629bb4fddb99d261d56c686970bb02c4584",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/RoomMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/RoomMapper.java",
+      "bytes": 476,
+      "sha256": "9190ac936540a223794b4428501475c2a4305bb227affa4ff3f426436c0330b4",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/RoomUsageMapper.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mapper/RoomUsageMapper.java",
+      "bytes": 894,
+      "sha256": "95ca1d24bf6aa9fbdab9a964d00d1fe5b4653f3fc710985c6d0c8b38ae27a264",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttConfig.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttConfig.java",
+      "bytes": 1695,
+      "sha256": "e326c07bf961b8080f5f73fea1e502fa36f09484851f599b30f639f035f9d31b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttGateway.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttGateway.java",
+      "bytes": 448,
+      "sha256": "a4ef7a4bc3f1ff10cc7dda4c2a94e4659f08f2fbc2baf465bbcd841106263dbe",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttMessageDispatcher.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttMessageDispatcher.java",
+      "bytes": 2532,
+      "sha256": "226fc1c3f0de8ac643be397b1fc6c23fec53861afb4917f0dc83f63a78ccd4b5",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttPubTopics.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttPubTopics.java",
+      "bytes": 3636,
+      "sha256": "182a5ffc892622671aabc4ae166d2ce01a27c4a8aaa93c06d799bb1849e6234a",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttPublisher.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttPublisher.java",
+      "bytes": 5967,
+      "sha256": "2d3347ca1a4a4ec7d58b8491edfeb99c08679bc2fe1791d20cf29703659a56ad",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttPublisherConfig.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttPublisherConfig.java",
+      "bytes": 1464,
+      "sha256": "92c291d09ceb329fc6c8a32f4e2adf073bbce8b83fcffd852567782b5c331fcd",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttSubTopics.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttSubTopics.java",
+      "bytes": 1693,
+      "sha256": "ecb07a4e66787ca27876bb92f11a9f7fb0ecc8151463cfd30ee7528928593161",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttSubscriberConfig.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttSubscriberConfig.java",
+      "bytes": 3334,
+      "sha256": "a829ff2a57fb61f8b94d717ecc236c5baa6e4c7ca37725e84b1c2431840bba29",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttTopicHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttTopicHandler.java",
+      "bytes": 911,
+      "sha256": "be635ec62173f8d15defb9e95df97ae56cc6050e558b8c59c849024a865e62d9",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttTopicMatcher.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/MqttTopicMatcher.java",
+      "bytes": 3626,
+      "sha256": "fe2ee9201bfedb7eec52aea4fc7d8d64cba25f3b14f3b6887f216083c2689487",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/BoardGameEvent.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/BoardGameEvent.java",
+      "bytes": 754,
+      "sha256": "06539acc48e60cd37390d0b4268c2c9dddd6521780c2bccccd18c9777c60ada1",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/BoardGameEventType.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/BoardGameEventType.java",
+      "bytes": 199,
+      "sha256": "77498a655595b7e16cc9bf43dde23a97748821f260bfa7046f8f73fe6694a9b8",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/CabinetOpen.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/CabinetOpen.java",
+      "bytes": 316,
+      "sha256": "ddb93f1f6fdc9599da468507cf3650744a29ecbc017747399bc8376a44d078e5",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/CabinetStatus.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/CabinetStatus.java",
+      "bytes": 416,
+      "sha256": "65b1d04c9eceaa92de46832889369c7f45a1c870662cb10a62aeb65962e2410c",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McAnalyze.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McAnalyze.java",
+      "bytes": 1033,
+      "sha256": "9a19ecd87d62f3000374430ac2abc90b50f4d3c4497178cf251640489df504e4",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McCommand.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McCommand.java",
+      "bytes": 553,
+      "sha256": "bd71ac15db4ee54a265cac22c4e7c92c9a2a9f65e78d026118d2081d64d1f521",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McStart.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McStart.java",
+      "bytes": 1054,
+      "sha256": "2d9ad5c5a83130737e7222bb0cdf401eb540a7b3dbe3fb6b5f02a0529eeaedc9",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McTile.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McTile.java",
+      "bytes": 498,
+      "sha256": "c2fb3befeece8d8e965ad0829f3b48479f1415f5d487908ba9539636567d6213",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McTurnLogEvent.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McTurnLogEvent.java",
+      "bytes": 769,
+      "sha256": "e7980fe2f7d176df987d38138da4f798a49296365122696c23a53a496785f7c1",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McViolationEvent.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/McViolationEvent.java",
+      "bytes": 742,
+      "sha256": "636757d674eb50afc81f19b0b7fcd21f83d7d232d96bcfa14b9d6bc41a725a4b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/MqttError.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/MqttError.java",
+      "bytes": 521,
+      "sha256": "f1045ee1df10ce5fb8e6ceb538d0ae21fc4ce47774e6824937c1e8038227c31c",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/QnaRes.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/QnaRes.java",
+      "bytes": 538,
+      "sha256": "518b1b7c51804189d08b6cd0cef79688eed41f62f747d670ca1dd9b74df42456",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/QnaStart.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/QnaStart.java",
+      "bytes": 374,
+      "sha256": "7dca07953354b4c3db8a83ce825028295d1bbf0b301ad182ef6e58607cecd95e",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/ReservationReady.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/ReservationReady.java",
+      "bytes": 1255,
+      "sha256": "6578f62b1f3bd9e71acd18263d0dfe076eef375bf176c74f5d051312fa2f4276",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/RfidCard.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/RfidCard.java",
+      "bytes": 180,
+      "sha256": "9d31d9f8c7de793506bf30371d40f61139e25226d0e161b54d7dea80256107af",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/TransactionComplete.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/TransactionComplete.java",
+      "bytes": 277,
+      "sha256": "8939490f49cbdf3524c246c9174e4939b8b936249da99ae9ad7823143125abcf",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/WakeStatus.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/dto/WakeStatus.java",
+      "bytes": 391,
+      "sha256": "9bce515a615d86fa9eeb7a94c0d0652208e03910fcf67c3eac222a35bf45bc18",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/CabinetStatusHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/CabinetStatusHandler.java",
+      "bytes": 2896,
+      "sha256": "2b4e78cee39852a27e7d98dea5f01239005392ed5e459f9ea227d0e0a17a8d0b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/CameraStatusHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/CameraStatusHandler.java",
+      "bytes": 990,
+      "sha256": "ac83cf3d1a9d579642b9da81f64be07ac0b51e45a332d75536a51572c39d2192",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/McTurnLogHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/McTurnLogHandler.java",
+      "bytes": 1800,
+      "sha256": "28090d62597a8eb14d0236ad223df14a369add4c64031dfb625ee00761c669b1",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/McViolationHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/McViolationHandler.java",
+      "bytes": 1830,
+      "sha256": "6df9cdca5b91f660102d9a0c9906dfe25a24a7b4681c69c74648ded560731f37",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/QnaReadyHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/QnaReadyHandler.java",
+      "bytes": 1105,
+      "sha256": "c95adbe88a60a3067dcbfa73a2cc5d3edf6f9c22e1665ea01c91f8f396bf52e0",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/QnaResHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/QnaResHandler.java",
+      "bytes": 1825,
+      "sha256": "c1858eab07ce84278716aa949a11a83610f5db80fd6d3bba6e43a42338288079",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/RfidCardHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/RfidCardHandler.java",
+      "bytes": 3652,
+      "sha256": "4bb16743ef6f13ae7eee8cb3276c41f2145b6c947e8674fa6b9552ec7bfca47b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/RummiKubLogHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/RummiKubLogHandler.java",
+      "bytes": 920,
+      "sha256": "d9804cdec7c14cb8a6fbe8e6d1cdaa7492a37de8e1241be2bc6d0d32c98d86ef",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/TestTopicHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/TestTopicHandler.java",
+      "bytes": 776,
+      "sha256": "4661a57ab8597807a74cacdf5407fc94e71c40ba9a7ad986e0df93f982d0d95a",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/VoiceLogHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/VoiceLogHandler.java",
+      "bytes": 904,
+      "sha256": "1145ac7187f35c3ce781b2d651923219b2c86eeb1f61ce8818727a315a22e74b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/WakeStatusHandler.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/mqtt/handler/WakeStatusHandler.java",
+      "bytes": 3894,
+      "sha256": "86c2b9c37dc4afa28959e65b25fc10ce09a85694dc195494fd361807bec9788c",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/service/AdminService.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/service/AdminService.java",
+      "bytes": 8950,
+      "sha256": "3ba0ad67c53d5d7e7f241b8fb05a0bbd023d5ba0957e9cade0972918a4c2762d",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/service/BoardGameService.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/service/BoardGameService.java",
+      "bytes": 1254,
+      "sha256": "16bf93500eb9bdb00d2fe4248583e76ca4241ffb61eba2c007e8258201f4d786",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/service/CabinetService.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/service/CabinetService.java",
+      "bytes": 10058,
+      "sha256": "7a565dd38ac09106fe7510802bb71ddbe635c054106cd04ab1c14361f52ef93b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/service/McService.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/service/McService.java",
+      "bytes": 25765,
+      "sha256": "694586d11aebdd254483ee511cd532687becb48936c09fe01b4561e8898591b9",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/service/QnaService.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/service/QnaService.java",
+      "bytes": 8309,
+      "sha256": "fc371cde63ccd59c000f804368db6c9d5f30debdaba16787dd1340e14f66372e",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/service/RentService.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/service/RentService.java",
+      "bytes": 11545,
+      "sha256": "845a6f88c87426500f8c62d961ece075e5133818b7e52e510aaf9eea5d16ad12",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/service/ReservationNotifyService.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/service/ReservationNotifyService.java",
+      "bytes": 8888,
+      "sha256": "cc2295db5650f0d5c8d8ed1c4f3648befdc73170ac24177d6761953beca14a18",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/service/ReservationService.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/service/ReservationService.java",
+      "bytes": 5682,
+      "sha256": "3a05f55f71fc795790f16cf411eabb40c1678d40b80101ea4190393c4dd52311",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/java/com/ssafy/boardgame/util/StatusUtil.java",
+      "source_path": "inte-server/src/main/java/com/ssafy/boardgame/util/StatusUtil.java",
+      "bytes": 1673,
+      "sha256": "92cad14d5191cd82f4c49476e7cf99ce9c2201662ed81c2270810f3631b7338f",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/application.properties",
+      "source_path": "inte-server/src/main/resources/application.properties",
+      "bytes": 2693,
+      "sha256": "8456f5a7e2692e13a5168b74c7033ff00aa43f8b66206bb7d5bbe83f521ffae2",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/BoardGameItemMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/BoardGameItemMapper.xml",
+      "bytes": 2017,
+      "sha256": "7f07f6429fc7c56d33795d498be3ff6eabddbe44925155a6957ca03488549766",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/BoardGameMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/BoardGameMapper.xml",
+      "bytes": 5726,
+      "sha256": "c340a054624bbdffc0f75b71bfd27972b08237ba43b04815d1b943e0062f16c5",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/CabinetMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/CabinetMapper.xml",
+      "bytes": 2325,
+      "sha256": "8816a8e6037c9079efe1f22d936f818e6a54465e92ebb23266b162ff4d855a09",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/McTurnLogMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/McTurnLogMapper.xml",
+      "bytes": 2384,
+      "sha256": "b30ac42cac0a416266d490ce6fb4ff8add6dcc5d3b7abd4a5c6967f09a025348",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/McViolationLogMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/McViolationLogMapper.xml",
+      "bytes": 1414,
+      "sha256": "bfc011815caa493f9486092c007e9e6232efc0fed0dc8631c065c686dda62464",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/QnaLogMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/QnaLogMapper.xml",
+      "bytes": 1145,
+      "sha256": "8a25805da78814821e7c9bd688dd306ea2ae99b9a15744f54d619a9ac787568f",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/RentMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/RentMapper.xml",
+      "bytes": 6778,
+      "sha256": "375be0a914e5ba8efbb13c0fa2d39cb11460cbae39ca3220c4c8c8b0088f09d1",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/ReservationMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/ReservationMapper.xml",
+      "bytes": 3808,
+      "sha256": "a207b3c91ceda33090ad655b676174c6395c479f5709aa206d59800a8b08124e",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/RoomMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/RoomMapper.xml",
+      "bytes": 652,
+      "sha256": "526f9587e4579ddaf8204cc99e0ddc0366fd114e118212242d8110e162708ca6",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/main/resources/mapper/RoomUsageMapper.xml",
+      "source_path": "inte-server/src/main/resources/mapper/RoomUsageMapper.xml",
+      "bytes": 2115,
+      "sha256": "6441ac4aab566b973129eb3c3905764e55907297fb5c0c02b65063f7ba8d2dbd",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/BoardgameApplicationTests.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/BoardgameApplicationTests.java",
+      "bytes": 214,
+      "sha256": "90a1019ac2b0dae4ec54384d903965c8fddae3ffe79a96689bd4ee772cd64cec",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/controller/AdminControllerTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/controller/AdminControllerTest.java",
+      "bytes": 8034,
+      "sha256": "5f8bf7cd572d18eff2d79651e9ab7675431327b305256e5d2ec747e1a5da2edb",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/controller/BoardGameControllerTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/controller/BoardGameControllerTest.java",
+      "bytes": 8590,
+      "sha256": "3bb5e41d280de1201d3f9bcef5e29b46d4400d32021d0731c0af18b07a5aeac5",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/controller/RentControllerTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/controller/RentControllerTest.java",
+      "bytes": 7181,
+      "sha256": "e8f3f7e93a019cb05db0f10e0cc77e51caa3c4fb447555c14918b4ac8ad587d7",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/controller/ReservationControllerTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/controller/ReservationControllerTest.java",
+      "bytes": 14231,
+      "sha256": "c0ad9ef4e25c7acb153894154c62b7a459f2908860a0a2fa596ca80c8ccc4957",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/controller/SupportControllerTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/controller/SupportControllerTest.java",
+      "bytes": 4337,
+      "sha256": "8b8951efafe4ea05f884442e6a5378c293f44a26883bd56faa55f42fb6f0a5dc",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/service/AdminServiceTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/service/AdminServiceTest.java",
+      "bytes": 17335,
+      "sha256": "0b46f1a6b31c021afaa7942acbb54999e5a7d4f510f9edb12898b3de0c70300d",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/service/BoardGameServiceTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/service/BoardGameServiceTest.java",
+      "bytes": 3670,
+      "sha256": "d073e9fa031a415b55cc9ed153fd684b4e0da0cfe73c6a5318e24328d032ba90",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/service/RentServiceTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/service/RentServiceTest.java",
+      "bytes": 8048,
+      "sha256": "26ea37dc1ad44e16979ff2ff02ce2a3aef9bd2622fca4b4419953156f11e849a",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/service/ReservationNotifyServiceTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/service/ReservationNotifyServiceTest.java",
+      "bytes": 9292,
+      "sha256": "afd71d267350a4f6635cd58ccf0cc76ff5a5f5c7c402790e166967c3f537843b",
+      "mode": "100644"
+    },
+    {
+      "path": "inte-server/src/test/java/com/ssafy/boardgame/service/ReservationServiceTest.java",
+      "source_path": "inte-server/src/test/java/com/ssafy/boardgame/service/ReservationServiceTest.java",
+      "bytes": 15505,
+      "sha256": "e978f5022a7c578b15213893efe683cefea4db521c2debd9079d21ad31cf1ce7",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/.gitignore",
+      "source_path": "table/mc/.gitignore",
+      "bytes": 227,
+      "sha256": "7eded5857a3dfd449e95aa81e05d8695a050a531bd05c762ff3030e052d1ab68",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/.gitkeep",
+      "source_path": "table/mc/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/SETUP.md",
+      "source_path": "table/mc/SETUP.md",
+      "bytes": 3066,
+      "sha256": "420d66ea948d2da06055108c88156a76a1e60597140246814aa9eb45d0e65aac",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/apt-needed.txt",
+      "source_path": "table/mc/apt-needed.txt",
+      "bytes": 90,
+      "sha256": "6550a968a8eda1b1d98cce1d3010613180f52ed2b0a8c13f2b9476a59611ed8a",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/facilitator.lock",
+      "source_path": "table/mc/facilitator.lock",
+      "bytes": 5,
+      "sha256": "5b47cdeb353c37f67d2003961a3222f7b6796bbde2fff06dfd5b1790a987bc27",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/install_jetson.sh",
+      "source_path": "table/mc/install_jetson.sh",
+      "bytes": 946,
+      "sha256": "07bfeac61d53d3fe922b1dffd19c66425e3f72f9fadd4899cad7e38c3b10a351",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/mqtt_handler.py",
+      "source_path": "table/mc/mqtt_handler.py",
+      "bytes": 10127,
+      "sha256": "a9d5f81b89fded044fd29d14a61eebe05be427810148341f43e4886e13b5cac1",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/pipeline.py",
+      "source_path": "table/mc/pipeline.py",
+      "bytes": 37833,
+      "sha256": "7df21913867ddecfd1f78f4ab8272f0b71ceff6ca4109f95fbcc7b293ac47f21",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/pipeline_2.py",
+      "source_path": "table/mc/pipeline_2.py",
+      "bytes": 8037,
+      "sha256": "a7176fd069bebaaa2720f39ef2da8ec96c8668f4a2f9c6101658b1dadc10d840",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/pipeline_jt.py",
+      "source_path": "table/mc/pipeline_jt.py",
+      "bytes": 6211,
+      "sha256": "82e1d89c12f6423d7cad50ff44bda4d030a3a8d22a9bc47f4f6710bfb995358c",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/process_lock.py",
+      "source_path": "table/mc/process_lock.py",
+      "bytes": 1644,
+      "sha256": "1946b42b0a3983a2016559c7064b898c5960d892e1e5e8cece7f62e0e3bf3146",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/rules.py",
+      "source_path": "table/mc/rules.py",
+      "bytes": 8865,
+      "sha256": "be7a81a1a9dcbcc188ea1b27e8bb82322208029e26cb0db4dcb4f2a3d2793b8a",
+      "mode": "100644"
+    },
+    {
+      "path": "table/mc/state.py",
+      "source_path": "table/mc/state.py",
+      "bytes": 1918,
+      "sha256": "8d69a2f3ed4d8906e9437650782d379f0fdb91ad4bf0dbf77d27d6bee247f1d9",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/.gitignore",
+      "source_path": "table/qna-server/.gitignore",
+      "bytes": 69,
+      "sha256": "3873089e4b642ba3ce680c0de945c3e8804002dbd03edcf614b5f049e9d74026",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/README.md",
+      "source_path": "table/qna-server/README.md",
+      "bytes": 15960,
+      "sha256": "d0b1a64264b1b5e15d503fa33096bcb40be7e0ed09d2c5970307cefa8160aeda",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/requirements.txt",
+      "source_path": "table/qna-server/requirements.txt",
+      "bytes": 57,
+      "sha256": "4e07e9f4398b3a65195f3e8bee2553ad77d9b09943aa6a835a27023323935978",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/rules/default.md",
+      "source_path": "table/qna-server/rules/default.md",
+      "bytes": 177,
+      "sha256": "e3f6853acfe9b4fdce890586a3aaed37b4d04b4a2f43a09a6131706434b8f5ec",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/rules/dixit.md",
+      "source_path": "table/qna-server/rules/dixit.md",
+      "bytes": 849,
+      "sha256": "41166c2d9f6981ab1c4de3d7a65f2e3d99922a64971335c17254e9638649f607",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/rules/halligalli.md",
+      "source_path": "table/qna-server/rules/halligalli.md",
+      "bytes": 686,
+      "sha256": "cd8ea50d8e1c6079d7f56a3da3cfa67b886e780b77d9f0742160f7f109a90adf",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/rules/rummikub.md",
+      "source_path": "table/qna-server/rules/rummikub.md",
+      "bytes": 7292,
+      "sha256": "2c4fe2a1dd3a5718ff70b52a7dc76c1a0d921cbf371e68fe20bb3ab31d03f35b",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/rules/stella.md",
+      "source_path": "table/qna-server/rules/stella.md",
+      "bytes": 775,
+      "sha256": "f2bd6bff5ea5220a55c7a1b1b16e926340852e605c2cd413a419e68104626b11",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/__init__.py",
+      "source_path": "table/qna-server/src/qna_server/__init__.py",
+      "bytes": 96,
+      "sha256": "2ec45124b9f45c66736dd264294d08e80daca7c1f6188cfa31ef2604ffbda3bd",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/__main__.py",
+      "source_path": "table/qna-server/src/qna_server/__main__.py",
+      "bytes": 11326,
+      "sha256": "146e09d2e465d8340c2dabe6694d2c5ac944a2729163a1c844f0e67d5f344567",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/audio_cue.py",
+      "source_path": "table/qna-server/src/qna_server/audio_cue.py",
+      "bytes": 3550,
+      "sha256": "e38c7bf379b06e28d93af112655e48acb59602c3068ed5f77d0506862609c7af",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/config.py",
+      "source_path": "table/qna-server/src/qna_server/config.py",
+      "bytes": 8562,
+      "sha256": "f7d5ec4981f82d9ddf07df934efd4f796dbbd5d918e7e2115b6d4d25b68b8454",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/direct.py",
+      "source_path": "table/qna-server/src/qna_server/direct.py",
+      "bytes": 4418,
+      "sha256": "47eaf43c6a09f5761653f868947c221edbd1c209779e479923610e6912692c17",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/engine.py",
+      "source_path": "table/qna-server/src/qna_server/engine.py",
+      "bytes": 10705,
+      "sha256": "bc473359e00dff33ed73d5b83c4df8094005b12d7bfc60ca5aa01d8c5aa0506b",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/gms_client.py",
+      "source_path": "table/qna-server/src/qna_server/gms_client.py",
+      "bytes": 29253,
+      "sha256": "4ae787ef662eb506edc4cf9276d06da980f117163e8212b78819d206673e8ec6",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/knowledge.py",
+      "source_path": "table/qna-server/src/qna_server/knowledge.py",
+      "bytes": 5378,
+      "sha256": "6281b769de79cf1809a9d65423667f88fc62df6fea8f7833c95aa329a778f095",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/mqtt_client.py",
+      "source_path": "table/qna-server/src/qna_server/mqtt_client.py",
+      "bytes": 4365,
+      "sha256": "294288cc9d238f8967758f8f769191272b25963dc44e6a3928b84d6228fbd06f",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/payloads.py",
+      "source_path": "table/qna-server/src/qna_server/payloads.py",
+      "bytes": 1923,
+      "sha256": "c3b6ce7e68905b708ac95a8521f5cec6f18d1acaee23da90717ed7c6eeccb80b",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/service.py",
+      "source_path": "table/qna-server/src/qna_server/service.py",
+      "bytes": 11206,
+      "sha256": "7ddd66b952c62e41090e97c24cb8ae8bf3479ab1f6e073e89899693ba4dd3e25",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/speech.py",
+      "source_path": "table/qna-server/src/qna_server/speech.py",
+      "bytes": 15338,
+      "sha256": "061b345d173fa9794ef475e9d1d03242f3e4922963183bdfd522fd76b8d702bb",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/topics.py",
+      "source_path": "table/qna-server/src/qna_server/topics.py",
+      "bytes": 699,
+      "sha256": "fd0b09435d4c205a14311554c874351c665488bd9ad481e54e09e21c84c37431",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/tts.py",
+      "source_path": "table/qna-server/src/qna_server/tts.py",
+      "bytes": 14907,
+      "sha256": "a2d186fdae90947d47321ccaaaacfea610988ed8025279181de6b39fc9a7d157",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/src/qna_server/vector_store.py",
+      "source_path": "table/qna-server/src/qna_server/vector_store.py",
+      "bytes": 15017,
+      "sha256": "ad6538eb6133be37854c7507a08cce2ad786324631ceef153316567a5c094450",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/tests/test_engine_streaming.py",
+      "source_path": "table/qna-server/tests/test_engine_streaming.py",
+      "bytes": 4287,
+      "sha256": "b95729de9ab1f2d89751fd72ebbf4a9e9ec4dfadd177324e5065e3338786d5cf",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/tests/test_gms_client.py",
+      "source_path": "table/qna-server/tests/test_gms_client.py",
+      "bytes": 5626,
+      "sha256": "4b15c04d5f0f57be4e988d7e72a46852ab7007e5fc94d3c064ec658158e2be42",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/tests/test_knowledge.py",
+      "source_path": "table/qna-server/tests/test_knowledge.py",
+      "bytes": 1739,
+      "sha256": "d9b1ad1765cfb75f3842d599054d40a25cca809fc509eba0d68278f51bad976a",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/tests/test_payloads.py",
+      "source_path": "table/qna-server/tests/test_payloads.py",
+      "bytes": 1863,
+      "sha256": "fc18eb39205a5530a04da33b8fca7ff49d4635ed5a850646c478d50b827f3946",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/tests/test_service.py",
+      "source_path": "table/qna-server/tests/test_service.py",
+      "bytes": 7968,
+      "sha256": "a85aa1ea02b5dbe248dc51e777afb2590e09daec5408048473884c7a17787293",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/tests/test_speech.py",
+      "source_path": "table/qna-server/tests/test_speech.py",
+      "bytes": 2214,
+      "sha256": "481d8c977d241d30546076c15e766f66bbd6273bbb6ab37fe7e8290424944652",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/tests/test_tts.py",
+      "source_path": "table/qna-server/tests/test_tts.py",
+      "bytes": 2251,
+      "sha256": "4d2d9abca97637c500455dbdfd6693449e41b3417f0be84e6e9c528913f08edd",
+      "mode": "100644"
+    },
+    {
+      "path": "table/qna-server/tests/test_vector_store.py",
+      "source_path": "table/qna-server/tests/test_vector_store.py",
+      "bytes": 6893,
+      "sha256": "0230847483b931a502e04bb61a88ddac9cc4b74939faa59439819feefefc17d1",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/README.md",
+      "source_path": "table/wakeword/README.md",
+      "bytes": 2631,
+      "sha256": "46348b2d0559327c5750644ce0055516b7947615ed2fd9e1f8a094fc654c15ea",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/RELEASE_STATUS.md",
+      "source_path": "table/wakeword/RELEASE_STATUS.md",
+      "bytes": 1112,
+      "sha256": "d23a562f06aa8a205ab581a12a5ae9f1cb10a8fd4e3fe0eb555d9934ebd6da54",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/TEST_DEPLOYMENT.md",
+      "source_path": "table/wakeword/TEST_DEPLOYMENT.md",
+      "bytes": 1623,
+      "sha256": "6da6b8edc4f546f3478adfaeee63f620a34a4d58f49a4765f61798672c295147",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/WAKEWORD_MODULE_IMPLEMENTATION.md",
+      "source_path": "table/wakeword/WAKEWORD_MODULE_IMPLEMENTATION.md",
+      "bytes": 102907,
+      "sha256": "24d6ec24676c5c7e4cec960fb15b6abda159c12f9881c3ad2413070e6829365f",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/config/README.md",
+      "source_path": "table/wakeword/config/README.md",
+      "bytes": 1077,
+      "sha256": "0baeb23e35a62b96e1f5ecf638941b9fd3aba54bd48e408c26b91bb54fa0113e",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/config/development.yaml",
+      "source_path": "table/wakeword/config/development.yaml",
+      "bytes": 2221,
+      "sha256": "bf9d9e2a0649c34b4a8fe5e86616fc36348985614b82a4e88e707b86aa87e045",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/models/README.md",
+      "source_path": "table/wakeword/models/README.md",
+      "bytes": 368,
+      "sha256": "180f60ebd81f69c9c3d11809fa1bcac32aa4b61f2b3e63ec2231774047185c04",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/pyproject.toml",
+      "source_path": "table/wakeword/pyproject.toml",
+      "bytes": 949,
+      "sha256": "6c630e201ba6a0e6c97940da84d311d22b59474769a9dbe3a5cca81c4ba11e3f",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/reports/README.md",
+      "source_path": "table/wakeword/reports/README.md",
+      "bytes": 422,
+      "sha256": "93adbc91788a053d0977fee7ecde0be96da9e2056aa0df829a80af67f54deaa3",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/requirements.lock",
+      "source_path": "table/wakeword/requirements.lock",
+      "bytes": 490,
+      "sha256": "4e6c1b64c6358a1bcb297fe04ecb7cb07c74de8bb92345383d83c838ad5751f7",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/schemas/deployment-manifest.schema.json",
+      "source_path": "table/wakeword/schemas/deployment-manifest.schema.json",
+      "bytes": 6309,
+      "sha256": "720cb2b536fc00b6064ddbea916277290f22ee267c84631b7851be02df311a0d",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/schemas/mqtt-v2-ack.schema.json",
+      "source_path": "table/wakeword/schemas/mqtt-v2-ack.schema.json",
+      "bytes": 560,
+      "sha256": "674874b1ed30d139045445b922f63d5590ff5a8854bfa974b742c8a06d8e70b0",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/schemas/mqtt-v2-request-status.schema.json",
+      "source_path": "table/wakeword/schemas/mqtt-v2-request-status.schema.json",
+      "bytes": 420,
+      "sha256": "8852c5eef8f9de75a8177149db5fdf9ffc4ca859785440856e49f97fe5224aa8",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/schemas/mqtt-v2-start.schema.json",
+      "source_path": "table/wakeword/schemas/mqtt-v2-start.schema.json",
+      "bytes": 768,
+      "sha256": "0734b4fda3954c85d571f93f261cf80a06a3dc562b8562d219a5522e0f40ba3b",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/schemas/mqtt-v2-status.schema.json",
+      "source_path": "table/wakeword/schemas/mqtt-v2-status.schema.json",
+      "bytes": 2606,
+      "sha256": "b3f3fda4ecd4193d57d4aaeba9c29aa9cdb532f309c9428850a7b2e0d9682c40",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/schemas/mqtt-v2-stop.schema.json",
+      "source_path": "table/wakeword/schemas/mqtt-v2-stop.schema.json",
+      "bytes": 689,
+      "sha256": "26b274119e582c7cfa774d249d24158f2876aa9504b8ceb833f5342943843949",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/scripts/bootstrap.sh",
+      "source_path": "table/wakeword/scripts/bootstrap.sh",
+      "bytes": 1506,
+      "sha256": "c964c99fc055ac2d3de252b7af5193ca853bd4c852521fe23215a14fc9135ac8",
+      "mode": "100755"
+    },
+    {
+      "path": "table/wakeword/scripts/run-shadow.sh",
+      "source_path": "table/wakeword/scripts/run-shadow.sh",
+      "bytes": 4207,
+      "sha256": "124d1996c1da4c27f4f0c4196409fb1b1dfd195b840db92fd95d7b5765de8d65",
+      "mode": "100755"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/__init__.py",
+      "source_path": "table/wakeword/src/wakeword_module/__init__.py",
+      "bytes": 824,
+      "sha256": "f88ce1df8590662461b89a6928ce40a066470116345a45cd735f48f049a9ab5d",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/__main__.py",
+      "source_path": "table/wakeword/src/wakeword_module/__main__.py",
+      "bytes": 49,
+      "sha256": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/audio.py",
+      "source_path": "table/wakeword/src/wakeword_module/audio.py",
+      "bytes": 11681,
+      "sha256": "8fcf671f833795b95c2ea890708d11ec5ba7ba89320b71bc1e907b492183e57e",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/config.py",
+      "source_path": "table/wakeword/src/wakeword_module/config.py",
+      "bytes": 29418,
+      "sha256": "3f2713257c481f25e06269ff23c3ccc1fe729b0e2a7434627bd30f69c381e893",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/contracts.py",
+      "source_path": "table/wakeword/src/wakeword_module/contracts.py",
+      "bytes": 15450,
+      "sha256": "498cb7227cd5c048fd1623c7f6aa1820eaff4ddaf61e077d83624a0d177d1512",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/coordinator.py",
+      "source_path": "table/wakeword/src/wakeword_module/coordinator.py",
+      "bytes": 41242,
+      "sha256": "fbfc114f5ab4a937b12aa40369f68fb119dc96dbf3f3ea5eabd22df1c9b39f0d",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/detector.py",
+      "source_path": "table/wakeword/src/wakeword_module/detector.py",
+      "bytes": 10481,
+      "sha256": "ce608e1bb154447bbe3c553aa76dede87abd2f63685714c5b9369a240fb9fc2d",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/engine.py",
+      "source_path": "table/wakeword/src/wakeword_module/engine.py",
+      "bytes": 10750,
+      "sha256": "7a77bc94cb99b92b5e15eb7a35177a4296b31dc26ef988d5468337867fcc8b2e",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/framing.py",
+      "source_path": "table/wakeword/src/wakeword_module/framing.py",
+      "bytes": 5535,
+      "sha256": "88e5b43aa72893274cba99908595286586aceded2dee2873337700197b8df1e8",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/health.py",
+      "source_path": "table/wakeword/src/wakeword_module/health.py",
+      "bytes": 2718,
+      "sha256": "e97ff13103dbf551fd873b6182b37e39a12eb4a48e8bf866ec90d614199ec687",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/main.py",
+      "source_path": "table/wakeword/src/wakeword_module/main.py",
+      "bytes": 6261,
+      "sha256": "b3b994a354b8ca29da800ba355461b43d6faefda9b2cc7276612299e8921811d",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/manifest.py",
+      "source_path": "table/wakeword/src/wakeword_module/manifest.py",
+      "bytes": 20622,
+      "sha256": "bd19c40a5d0e0064142a2ecf3d3cbf9073f4e70746e961aa42d00c1429a50760",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/mqtt.py",
+      "source_path": "table/wakeword/src/wakeword_module/mqtt.py",
+      "bytes": 18369,
+      "sha256": "7b8fc2abba53543a993f9086b9266e380d55bcc8982fcea975433a0df4f6ca54",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/replay.py",
+      "source_path": "table/wakeword/src/wakeword_module/replay.py",
+      "bytes": 9317,
+      "sha256": "72d2f289ef34184a16ef6b2f83e4f1b5635f61b513920bd51e95c12ace7aea7d",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/store.py",
+      "source_path": "table/wakeword/src/wakeword_module/store.py",
+      "bytes": 25159,
+      "sha256": "8d4f16d1fd31a11c62c83e71b6e6d7a22ffc1f669873d885cfe1ebbe1f36236e",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/src/wakeword_module/worker.py",
+      "source_path": "table/wakeword/src/wakeword_module/worker.py",
+      "bytes": 15964,
+      "sha256": "29a571d5d315c49f0ecac5df33db4ab84cadf89d7073fd4dda3da52f2a492123",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tests/test_config_and_replay.py",
+      "source_path": "table/wakeword/tests/test_config_and_replay.py",
+      "bytes": 2392,
+      "sha256": "53387d5ffb366336b14a988f173a2dad64350f90b6d66a7a0aa9bad06650ecdc",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tests/test_contracts.py",
+      "source_path": "table/wakeword/tests/test_contracts.py",
+      "bytes": 2085,
+      "sha256": "5eba9c1c6ae735e2261bc981b31832910c270f0ad9ab4bbec417b76378c49eed",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tests/test_detector.py",
+      "source_path": "table/wakeword/tests/test_detector.py",
+      "bytes": 3311,
+      "sha256": "d03b03e42f5fe2d22bcb81e66624c0ce09822eacd7e97b115cb6269449c762b7",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tests/test_engine.py",
+      "source_path": "table/wakeword/tests/test_engine.py",
+      "bytes": 1833,
+      "sha256": "6e422b49e32056961f55b05925977b454ba3b3111b3fa60461c954861ad12192",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tests/test_framing.py",
+      "source_path": "table/wakeword/tests/test_framing.py",
+      "bytes": 1770,
+      "sha256": "1ee13f5c14789060964ca8691dc5c9a87eb50cc5491115bff2ae5c22619a3ad1",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tests/test_mqtt_and_coordinator.py",
+      "source_path": "table/wakeword/tests/test_mqtt_and_coordinator.py",
+      "bytes": 13151,
+      "sha256": "d0573471ffb631026970b1b526476a96f9b97f56cf4813f75cda47294b0836a9",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tests/test_store.py",
+      "source_path": "table/wakeword/tests/test_store.py",
+      "bytes": 1795,
+      "sha256": "996dd5855a92204a2dda0f953be2e4fa2611e5c0b6f8affee25f45e0878957ce",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tools/benchmark.py",
+      "source_path": "table/wakeword/tools/benchmark.py",
+      "bytes": 2510,
+      "sha256": "d9c270c0d73f4c3a44c203fee417029465e069874bd1b837b0342a4a03709588",
+      "mode": "100644"
+    },
+    {
+      "path": "table/wakeword/tools/package_models.py",
+      "source_path": "table/wakeword/tools/package_models.py",
+      "bytes": 2328,
+      "sha256": "7b22c0779510447c93ab3fd3badaf13c9f9e63e21512bacb3c60b6e4db1f96e3",
+      "mode": "100644"
+    }
+  ],
+  "excluded": [
+    {
+      "path": "boardgame-frontend/public/sounds/ding.mp3",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 20106
+    },
+    {
+      "path": "boardgame-frontend/public/sounds/error.mp3",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 17180
+    },
+    {
+      "path": "exec/시연 시나리오.pptx",
+      "reason": "large-artifact-over-5-MiB",
+      "bytes": 6335710
+    },
+    {
+      "path": "table/mc/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 806950107
+    },
+    {
+      "path": "table/mc/weights/resnet18_color_best.pt",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 44797195
+    },
+    {
+      "path": "table/mc/weights/resnet18_number_best.pt",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 44815883
+    },
+    {
+      "path": "table/mc/weights/yolov8s_tile_detector_best.pt",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 22536234
+    },
+    {
+      "path": "table/wakeword/models/embedding_model.onnx",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 1326578
+    },
+    {
+      "path": "table/wakeword/models/melspectrogram.onnx",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 1087958
+    },
+    {
+      "path": "table/wakeword/models/nae_teon_kkeutnasseo.onnx",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 203881
+    },
+    {
+      "path": "table/wakeword/models/silero_vad.onnx",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 1807522
+    },
+    {
+      "path": "table/wakeword/models/ssafiya.onnx",
+      "reason": "binary-model-installer-media-or-key-material",
+      "bytes": 203855
+    }
+  ]
+}
